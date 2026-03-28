@@ -109,6 +109,21 @@ window.MARKET_PRESSURE_RENDER = {
         <div class="dominant-action">${dominantData.action}</div>
       </div>
     `;
+
+    const ctaBtn = document.getElementById('ctaBtn');
+    const ctaBtn2 = document.getElementById('ctaBtn2');
+
+    if (ctaBtn) {
+      ctaBtn.onclick = () => {
+        window.location.href = '../booking/paid.html';
+      };
+    }
+
+    if (ctaBtn2) {
+      ctaBtn2.onclick = () => {
+        window.location.href = '../booking/free-call.html';
+      };
+    }
   },
 
   buildGauge(index, ocean, oceanCopy) {
