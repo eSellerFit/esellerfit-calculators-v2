@@ -8,18 +8,69 @@ window.MARKET_PRESSURE_DATA = {
     m: { name: 'Margin Corridor', color: '#3a9e78', hex: '#3a9e78' }
   },
   questions: [
-    { id: 'D1', force: 'd', text: 'Search volume for your product category is...', opts: [{ text: 'Very low — not much traffic', band: 'low' }, { text: 'Moderate — some consistent searches', band: 'mid' }, { text: 'High — clear buyer intent signals', band: 'high' }] },
-    { id: 'D2', force: 'd', text: 'Direction of demand — is interest growing, stable, or declining?', opts: [{ text: 'Declining or unstable', band: 'low' }, { text: 'Stable and consistent', band: 'mid' }, { text: 'Growing — new audience entering', band: 'high' }] },
-    { id: 'D3', force: 'd', text: 'Buyer intent for your category is driven by...', opts: [{ text: 'Problem-solving searches', band: 'low' }, { text: 'Mix of problem-solving and lifestyle', band: 'mid' }, { text: 'High purchase intent — ready-to-buy signals', band: 'high' }] },
-    { id: 'S1', force: 's', text: 'How many active sellers are you aware of in this category?', opts: [{ text: 'Very few — limited competition', band: 'low' }, { text: 'Moderate number — healthy ecosystem', band: 'mid' }, { text: 'Many — heavily saturated', band: 'high' }] },
-    { id: 'S2', force: 's', text: 'Seller concentration in your category...', opts: [{ text: 'Distributed — many small players', band: 'low' }, { text: 'Moderate — mix of sizes', band: 'mid' }, { text: 'Concentrated — dominated by major brands', band: 'high' }] },
-    { id: 'S3', force: 's', text: 'Ease of differentiation in your category...', opts: [{ text: 'High — many ways to stand out', band: 'low' }, { text: 'Moderate — differentiation possible but competitive', band: 'mid' }, { text: 'Low — commoditized, hard to differentiate', band: 'high' }] },
-    { id: 'A1', force: 'a', text: 'Estimated cost per click (or equivalent ad spend to reach buyers)...', opts: [{ text: 'Low — $0.50 or less', band: 'low' }, { text: 'Moderate — $0.50–2.00', band: 'mid' }, { text: 'High — $2.00+', band: 'high' }] },
-    { id: 'A2', force: 'a', text: 'Sponsored/paid listings density in your category...', opts: [{ text: 'Low — organic results dominate', band: 'low' }, { text: 'Moderate — mix of paid and organic', band: 'mid' }, { text: 'High — paid results dominate', band: 'high' }] },
-    { id: 'A3', force: 'a', text: 'Difficulty of achieving high organic rank without paid ads...', opts: [{ text: 'Low — organics rank easily', band: 'low' }, { text: 'Moderate — requires consistent effort', band: 'mid' }, { text: 'High — ads nearly required to compete', band: 'high' }] },
-    { id: 'M1', force: 'm', text: 'Price spread across your category (lowest to highest price)...', opts: [{ text: 'Wide — lots of price differentiation', band: 'low' }, { text: 'Moderate — some price variety', band: 'mid' }, { text: 'Narrow — prices compressed, hard to differentiate', band: 'high' }] },
-    { id: 'M2', force: 'm', text: 'Gross margins for successful sellers in your category...', opts: [{ text: 'High — 50%+ after COGS', band: 'low' }, { text: 'Moderate — 35–50%', band: 'mid' }, { text: 'Low — under 35%', band: 'high' }] },
-    { id: 'M3', force: 'm', text: 'Total fee burden (platform + payment + shipping) as % of selling price...', opts: [{ text: 'Low — under 20%', band: 'low' }, { text: 'Moderate — 20–35%', band: 'mid' }, { text: 'High — 35%+', band: 'high' }] }
+    { id: 'D1', force: 'd', text: 'Monthly search volume for this product category (use Google Trends or Amazon search estimates)', opts: [
+      { text: 'Under 10,000 searches/month', band: 'low' },
+      { text: '10,000 – 100,000 searches/month', band: 'mid' },
+      { text: 'Over 100,000 searches/month', band: 'high' }
+    ] },
+    { id: 'D2', force: 'd', text: 'Trend direction — is demand for this category growing, stable, or declining over the past 12 months?', opts: [
+      { text: 'Declining — search and interest are dropping', band: 'low' },
+      { text: 'Stable / flat — consistent but not growing', band: 'mid' },
+      { text: 'Growing — clear upward trajectory', band: 'high' }
+    ] },
+    { id: 'D3', force: 'd', text: 'Buyer intent quality — when people search for this category, are searches mostly informational or transactional?', opts: [
+      { text: 'Mostly informational ("what is", "how to use")', band: 'low' },
+      { text: 'Mixed — both research and buying intent', band: 'mid' },
+      { text: 'Mostly transactional ("buy", "best price", "where to get")', band: 'high' }
+    ] },
+
+    { id: 'S1', force: 's', text: 'How many competing product listings exist in your primary marketplace for this category?', opts: [
+      { text: 'Under 500 results', band: 'low' },
+      { text: '500 – 5,000 results', band: 'mid' },
+      { text: 'Over 5,000 results', band: 'high' }
+    ] },
+    { id: 'S2', force: 's', text: 'How fragmented is the seller landscape? (Many small sellers = high fragmentation = more noise)', opts: [
+      { text: '1–2 dominant brands own most of the market', band: 'low' },
+      { text: 'A handful of established brands with some smaller sellers', band: 'mid' },
+      { text: 'Many small sellers — no clear dominant player', band: 'high' }
+    ] },
+    { id: 'S3', force: 's', text: 'Is there visible differentiation opportunity — unmet buyer needs, poor reviews, product gaps?', opts: [
+      { text: 'Clear white space — obvious unmet needs or gaps', band: 'low' },
+      { text: 'Some gaps visible — requires deeper analysis', band: 'mid' },
+      { text: 'Fully saturated — products are largely homogeneous', band: 'high' }
+    ] },
+
+    { id: 'A1', force: 'a', text: 'Estimated cost-per-click (CPC) for paid ads in this category (check Amazon suggested bids or Google Keyword Planner)', opts: [
+      { text: 'Under $0.50 per click', band: 'low' },
+      { text: '$0.50 – $1.50 per click', band: 'mid' },
+      { text: 'Over $1.50 per click', band: 'high' }
+    ] },
+    { id: 'A2', force: 'a', text: 'What percentage of page 1 results on your primary marketplace are sponsored / paid listings?', opts: [
+      { text: 'Under 20% — mostly organic results', band: 'low' },
+      { text: '20–50% — mixed organic and sponsored', band: 'mid' },
+      { text: 'Over 50% — page 1 is dominated by ads', band: 'high' }
+    ] },
+    { id: 'A3', force: 'a', text: 'Can a new seller realistically achieve organic search ranking within 3–6 months without heavy ad spend?', opts: [
+      { text: 'Yes — organic ranking achievable with good listing quality', band: 'low' },
+      { text: 'Partial — both organic effort and some paid spend needed', band: 'mid' },
+      { text: 'No — paid advertising is the only realistic path to visibility', band: 'high' }
+    ] },
+
+    { id: 'M1', force: 'm', text: 'Price spread in your category — what is the range between the highest and lowest price for comparable products?', opts: [
+      { text: 'Wide spread — top price is 3x or more the lowest price', band: 'low' },
+      { text: 'Moderate spread — top price is 1.5x to 3x the lowest', band: 'mid' },
+      { text: 'Narrow spread — prices are clustered, race-to-bottom dynamic', band: 'high' }
+    ] },
+    { id: 'M2', force: 'm', text: 'Estimated gross margin at typical market price (price minus landed cost / price)', opts: [
+      { text: 'Over 50% gross margin at market price', band: 'low' },
+      { text: '30–50% gross margin at market price', band: 'mid' },
+      { text: 'Under 30% gross margin at market price', band: 'high' }
+    ] },
+    { id: 'M3', force: 'm', text: 'Combined fee burden — platform fees, fulfillment, and estimated ad spend as % of sale price', opts: [
+      { text: 'Under 35% of sale price consumed by fees and ads', band: 'low' },
+      { text: '35–50% of sale price consumed by fees and ads', band: 'mid' },
+      { text: 'Over 50% of sale price consumed by fees and ads', band: 'high' }
+    ] }
   ],
   dominantData: {
     d: { cardClass: 'dominant-card-demand', eyecolor: '#0f6e56', title: 'Demand-Driven Market', what: '<strong>What it means:</strong> Your category has clear buyer intent, but you are entering into a market where the structure is still being defined. Demand is the constraining factor, not supply or price.', action: '<strong>Move fast.</strong> Target neglected sub-niches within the category. Prioritize first-mover advantage and reviews over margin early. Understand that your biggest risk is that demand was in one niche and you are selling to another.' },
