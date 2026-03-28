@@ -16,19 +16,19 @@
 <body>
 
 <nav id="mainNav">
-  <a class="nav-brand" href="./">
+  <a class="nav-brand" data-link="home" href="./">
     <div class="nav-logo">eSF</div>
     <div class="nav-name">eSellerFit</div>
   </a>
   <div class="nav-links">
-    <a href="#tools">Free Tools</a>
-    <a href="#strategy">Entry Strategy</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#trust">About</a>
+    <a data-link="freeTools" href="#tools">Free Tools</a>
+    <a data-link="entryStrategySection" href="#strategy">Entry Strategy</a>
+    <a data-link="pricingSection" href="#pricing">Pricing</a>
+    <a data-link="aboutSection" href="#trust">About</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
-    <a href="https://esellerfit.com/booking-free-call-v2.html" class="nav-intro">Book Free Call</a>
-    <a href="#tools" class="nav-cta">Check Your Fit →</a>
+    <a data-link="freeCallBookingPage" href="https://esellerfit.com/booking-free-call-v2.html" class="nav-intro">Book Free Call</a>
+    <a data-link="freeTools" href="#tools" class="nav-cta">Check Your Fit →</a>
   </div>
 </nav>
 
@@ -39,10 +39,10 @@
       <h1 class="hero-title">Most sellers choose their marketplace<br>before they understand <em>their market.</em><br>That's the mistake.</h1>
       <p class="hero-sub">eSellerFit runs you through the same three-layer framework used to evaluate marketplace entry at scale — in 15 minutes, for free. Find out if your market is worth entering, which platform you're actually built for, and what's standing between you and your first sale.</p>
       <div class="hero-actions">
-        <a href="#tools" class="btn-primary">Start Free — Check Your Fit →</a>
-        <a href="#strategy" class="btn-secondary">See Entry Strategy</a>
+        <a data-link="freeTools" href="#tools" class="btn-primary">Start Free — Check Your Fit →</a>
+        <a data-link="entryStrategySection" href="#strategy" class="btn-secondary">See Entry Strategy</a>
       </div>
-      <a href="https://esellerfit.com/booking-free-call-v2.html" class="hero-intro-link">Not sure where to start? Talk to George first — free 30 min →</a>
+      <a data-link="freeCallBookingPage" href="https://esellerfit.com/booking-free-call-v2.html" class="hero-intro-link">Not sure where to start? Talk to George first — free 30 min →</a>
     </div>
     <div class="hero-formula">
       <div class="formula-label">The eSellerFit Model</div>
@@ -90,7 +90,7 @@
         <div class="col-num">01</div>
         <h3 class="col-title">Who are you as a seller?</h3>
         <p class="col-body">Your capital, risk tolerance, execution ability, and brand instincts determine which e-commerce model you're built for. Most sellers skip this step.</p>
-        <a href="./seller-profile/" class="col-tool">
+        <a data-link="sellerProfileCalculator" href="./seller-profile/" class="col-tool">
           <div class="col-tool-icon" style="background:#f5ecd8;color:#9a6a10;">SP</div>
           <div>
             <div class="col-tool-name">Check Your Seller Type</div>
@@ -102,7 +102,7 @@
         <div class="col-num">02</div>
         <h3 class="col-title">How competitive is your market?</h3>
         <p class="col-body">Demand signals, supply density, advertising costs, and margin structure — the four forces that determine whether your category is worth entering right now.</p>
-        <a href="./market-pressure/" class="col-tool">
+        <a data-link="marketPressureCalculator" href="./market-pressure/" class="col-tool">
           <div class="col-tool-icon" style="background:#ddeaf7;color:#185FA5;">MP</div>
           <div>
             <div class="col-tool-name">Scan This Market</div>
@@ -114,7 +114,7 @@
         <div class="col-num">03</div>
         <h3 class="col-title">Which platform are you built for?</h3>
         <p class="col-body">Amazon, Shopify, and Etsy reward completely different seller profiles. Your fit score shows where you have a structural advantage — and where you'd be fighting uphill.</p>
-        <a href="./marketplace-fit/" class="col-tool">
+        <a data-link="marketplaceFitCalculator" href="./marketplace-fit/" class="col-tool">
           <div class="col-tool-icon" style="background:#d0ecdf;color:#0f6e56;">MF</div>
           <div>
             <div class="col-tool-name">Find Your Best Platform</div>
@@ -137,7 +137,7 @@
         <h3 class="tool-title">Who are you as a seller?</h3>
         <p class="tool-body">19 questions across budget, risk tolerance, execution discipline, and marketing instinct. Diagnoses your Human profile — the side of the equation most people never examine.</p>
         <div class="tool-output">"Your profile is best suited to an operations-first platform entry."</div>
-        <a href="./seller-profile/" class="tool-link" style="color:#caa25f;">Check Your Seller Type <span>→</span></a>
+        <a data-link="sellerProfileCalculator" href="./seller-profile/" class="tool-link" style="color:#caa25f;">Check Your Seller Type <span>→</span></a>
         <div class="tool-bridge">In your Entry Strategy, your profile is matched to a specific category and platform with verified data.</div>
       </div>
       <div class="tool-card">
@@ -145,7 +145,7 @@
         <h3 class="tool-title">How competitive is your market?</h3>
         <p class="tool-body">12 signals across demand, supply density, advertising cost, and margin structure. Shows you exactly what you're walking into — including the gaps in your own market knowledge.</p>
         <div class="tool-output">"The questions you can't answer are as important as the ones you can."</div>
-        <a href="./market-pressure/" class="tool-link" style="color:#378add;">Scan This Market <span>→</span></a>
+        <a data-link="marketPressureCalculator" href="./market-pressure/" class="tool-link" style="color:#378add;">Scan This Market <span>→</span></a>
         <div class="tool-bridge">In your Entry Strategy, all signals are verified using Helium 10 and Jungle Scout data.</div>
       </div>
       <div class="tool-card">
@@ -153,7 +153,7 @@
         <h3 class="tool-title">Which platform are you built for?</h3>
         <p class="tool-body">12 questions across buyer fit, operational capacity, and financial readiness. Scores your fit against Amazon, Shopify, and Etsy — with a breakdown of where each fit breaks down.</p>
         <div class="tool-output">"A fit score per platform, not just a single winner. The gaps matter."</div>
-        <a href="./marketplace-fit/" class="tool-link" style="color:#0f6e56;">Find Your Best Platform <span>→</span></a>
+        <a data-link="marketplaceFitCalculator" href="./marketplace-fit/" class="tool-link" style="color:#0f6e56;">Find Your Best Platform <span>→</span></a>
         <div class="tool-bridge">In your Entry Strategy, platform selection is verified against your specific product and market conditions.</div>
       </div>
     </div>
@@ -164,7 +164,7 @@
         <div style="font-size:15px;color:var(--dt2);font-weight:600;">You're ready for your Entry Strategy.</div>
         <div style="font-size:13px;color:var(--dt4);margin-top:4px;">Your scores are the inputs. The Entry Strategy is the plan.</div>
       </div>
-      <a href="https://esellerfit.com/booking-paid-v2.html" style="padding:14px 28px;border-radius:7px;background:var(--teal);color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background 0.2s;" onmouseover="this.style.background='#0f8a6a'" onmouseout="this.style.background='#0f6e56'">Book Entry Strategy · $449 →</a>
+      <a data-link="paidBookingPage" href="https://esellerfit.com/booking-paid-v2.html" style="padding:14px 28px;border-radius:7px;background:var(--teal);color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background 0.2s;" onmouseover="this.style.background='#0f8a6a'" onmouseout="this.style.background='#0f6e56'">Book Entry Strategy · $449 →</a>
     </div>
   </div>
 </section>
@@ -180,26 +180,11 @@
       <div class="dossier-eyebrow">Entry Strategy Dossier</div>
       <div class="dossier-title">What you'll know when it's done</div>
       <div class="dossier-desc">Not a report. A decision. Every question that's been keeping you stuck — answered with verified data before you spend a dollar.</div>
-      <div class="dossier-item">
-        <div class="dossier-num">01</div>
-        <div><div class="dossier-item-title">You'll know exactly who you are as a seller</div><div class="dossier-item-desc">Your capital, risk tolerance, and execution profile — interpreted in plain language so you understand what kind of entry you're actually built for.</div></div>
-      </div>
-      <div class="dossier-item">
-        <div class="dossier-num">02</div>
-        <div><div class="dossier-item-title">You'll know whether your category is worth entering right now</div><div class="dossier-item-desc">Real demand, real CPC, real competition density — verified with Helium 10 and Jungle Scout. Not your estimate. Actual data.</div></div>
-      </div>
-      <div class="dossier-item">
-        <div class="dossier-num">03</div>
-        <div><div class="dossier-item-title">You'll know which platform gives you a structural advantage</div><div class="dossier-item-desc">Amazon, Shopify, or Etsy — matched to your profile AND your market, with fees and ad requirements calculated. Not hype. Fit.</div></div>
-      </div>
-      <div class="dossier-item">
-        <div class="dossier-num">04</div>
-        <div><div class="dossier-item-title">You'll have 2–3 specific product directions to move on</div><div class="dossier-item-desc">Where to enter, how to position, what to do first. Concrete enough to act on — not a list of options to think about more.</div></div>
-      </div>
-      <div class="dossier-item">
-        <div class="dossier-num">05</div>
-        <div><div class="dossier-item-title">You'll know what can go wrong — and how to manage it</div><div class="dossier-item-desc">Top 3 risks for your specific situation, plus a sequenced 90-day action plan so you know exactly what to do and when.</div></div>
-      </div>
+      <div class="dossier-item"><div class="dossier-num">01</div><div><div class="dossier-item-title">You'll know exactly who you are as a seller</div><div class="dossier-item-desc">Your capital, risk tolerance, and execution profile — interpreted in plain language so you understand what kind of entry you're actually built for.</div></div></div>
+      <div class="dossier-item"><div class="dossier-num">02</div><div><div class="dossier-item-title">You'll know whether your category is worth entering right now</div><div class="dossier-item-desc">Real demand, real CPC, real competition density — verified with Helium 10 and Jungle Scout. Not your estimate. Actual data.</div></div></div>
+      <div class="dossier-item"><div class="dossier-num">03</div><div><div class="dossier-item-title">You'll know which platform gives you a structural advantage</div><div class="dossier-item-desc">Amazon, Shopify, or Etsy — matched to your profile AND your market, with fees and ad requirements calculated. Not hype. Fit.</div></div></div>
+      <div class="dossier-item"><div class="dossier-num">04</div><div><div class="dossier-item-title">You'll have 2–3 specific product directions to move on</div><div class="dossier-item-desc">Where to enter, how to position, what to do first. Concrete enough to act on — not a list of options to think about more.</div></div></div>
+      <div class="dossier-item"><div class="dossier-num">05</div><div><div class="dossier-item-title">You'll know what can go wrong — and how to manage it</div><div class="dossier-item-desc">Top 3 risks for your specific situation, plus a sequenced 90-day action plan so you know exactly what to do and when.</div></div></div>
     </div>
     <div class="strategy-right">
       <div class="strategy-paths">
@@ -218,9 +203,9 @@
       <div class="strategy-cta">
         <div class="strategy-cta-title">Not sure which fits you?</div>
         <div class="strategy-cta-sub">Run the free tools first — 15 minutes, no credit card. Or book a free call and George will tell you exactly where to start.</div>
-        <a href="#tools" class="strategy-cta-btn">Start Free — Check Your Fit →</a>
+        <a data-link="freeTools" href="#tools" class="strategy-cta-btn">Start Free — Check Your Fit →</a>
         <div class="strategy-cta-note" style="margin-top:12px;">
-          <a href="https://esellerfit.com/booking-free-call-v2.html" style="color:#2a3028;font-size:12px;text-decoration:none;border-bottom:1px solid #2a3028;">Or book a free 30-min call first →</a>
+          <a data-link="freeCallBookingPage" href="https://esellerfit.com/booking-free-call-v2.html" style="color:#2a3028;font-size:12px;text-decoration:none;border-bottom:1px solid #2a3028;">Or book a free 30-min call first →</a>
         </div>
       </div>
     </div>
@@ -234,7 +219,7 @@
       <strong class="intro-banner-title">Not sure if this is right for you?</strong>
       <p class="intro-banner-text">Book a free intro call. No pitch — just an honest conversation about whether this fits where you are right now.</p>
     </div>
-    <a href="https://esellerfit.com/booking-free-call-v2.html" class="intro-banner-btn">Book Free Call →</a>
+    <a data-link="freeCallBookingPage" href="https://esellerfit.com/booking-free-call-v2.html" class="intro-banner-btn">Book Free Call →</a>
   </div>
 </div>
 
@@ -245,7 +230,6 @@
     <p class="section-sub" style="color:var(--dt3)">All three paths lead to the same place — a clear entry decision backed by real data. Start where you are.</p>
 
     <div class="pricing-cards" style="grid-template-columns:repeat(3,1fr);">
-
       <div class="price-scenario">
         <div class="price-scenario-label">Not sure where to start</div>
         <div class="price-scenario-question">Talk to George first. No commitment, no pitch.</div>
@@ -256,7 +240,7 @@
           <li>Get clarity on which path makes sense</li>
           <li>No obligation to book anything after</li>
         </ul>
-        <a href="https://esellerfit.com/booking-free-call-v2.html" class="price-cta-btn outline">Book Free Call →</a>
+        <a data-link="freeCallBookingPage" href="https://esellerfit.com/booking-free-call-v2.html" class="price-cta-btn outline">Book Free Call →</a>
       </div>
 
       <div class="price-scenario featured">
@@ -272,7 +256,7 @@
           <li>90-day execution roadmap</li>
           <li>Risk register — top 3 risks and how to manage them</li>
         </ul>
-        <a href="https://esellerfit.com/booking-paid-v2.html" class="price-cta-btn">Book Entry Strategy · $449 →</a>
+        <a data-link="paidBookingPage" href="https://esellerfit.com/booking-paid-v2.html" class="price-cta-btn">Book Entry Strategy · $449 →</a>
       </div>
 
       <div class="price-scenario">
@@ -289,17 +273,16 @@
           <li>Risk register — top 3 risks and how to manage them</li>
           <li>One additional call during strategy preparation</li>
         </ul>
-        <a href="https://esellerfit.com/booking-paid-v2.html" class="price-cta-btn outline">Book Entry Strategy · $549 →</a>
+        <a data-link="paidBookingPage" href="https://esellerfit.com/booking-paid-v2.html" class="price-cta-btn outline">Book Entry Strategy · $549 →</a>
       </div>
-
     </div>
 
     <div class="free-tools-note">
       <div class="free-tools-note-text"><strong>Haven't run the free tools yet?</strong> They take 15 minutes and save you $100 on your Entry Strategy.</div>
       <div class="free-tools-note-links">
-        <a href="./seller-profile/" class="free-tool-pill" style="color:#caa25f;border-color:#2a2010;">Seller Profile</a>
-        <a href="./market-pressure/" class="free-tool-pill" style="color:#378add;border-color:#102030;">Market Pressure</a>
-        <a href="./marketplace-fit/" class="free-tool-pill" style="color:#0f6e56;border-color:#0d2018;">Marketplace Fit</a>
+        <a data-link="sellerProfileCalculator" href="./seller-profile/" class="free-tool-pill" style="color:#caa25f;border-color:#2a2010;">Seller Profile</a>
+        <a data-link="marketPressureCalculator" href="./market-pressure/" class="free-tool-pill" style="color:#378add;border-color:#102030;">Market Pressure</a>
+        <a data-link="marketplaceFitCalculator" href="./marketplace-fit/" class="free-tool-pill" style="color:#0f6e56;border-color:#0d2018;">Marketplace Fit</a>
       </div>
     </div>
   </div>
@@ -319,18 +302,9 @@
       </div>
     </div>
     <div class="trust-creds">
-      <div class="trust-cred">
-        <div class="trust-cred-arrow">→</div>
-        <div class="trust-cred-text">Designed <strong>ecom performance systems used by 650,000+ sellers</strong></div>
-      </div>
-      <div class="trust-cred">
-        <div class="trust-cred-arrow">→</div>
-        <div class="trust-cred-text">Co-founded a <strong>marketplace with 100,000+ contractors</strong></div>
-      </div>
-      <div class="trust-cred">
-        <div class="trust-cred-arrow">→</div>
-        <div class="trust-cred-text"><strong>Certified SCORE Mentor</strong> — Westchester, NY · SCORE is the largest network of volunteer business mentors in the US, backed by the Small Business Administration (SBA)</div>
-      </div>
+      <div class="trust-cred"><div class="trust-cred-arrow">→</div><div class="trust-cred-text">Designed <strong>ecom performance systems used by 650,000+ sellers</strong></div></div>
+      <div class="trust-cred"><div class="trust-cred-arrow">→</div><div class="trust-cred-text">Co-founded a <strong>marketplace with 100,000+ contractors</strong></div></div>
+      <div class="trust-cred"><div class="trust-cred-arrow">→</div><div class="trust-cred-text"><strong>Certified SCORE Mentor</strong> — Westchester, NY · SCORE is the largest network of volunteer business mentors in the US, backed by the Small Business Administration (SBA)</div></div>
     </div>
     <div class="trust-closing">
       This isn't theory. It's the framework I built because I watched sellers fail for the wrong reasons — not effort, but platform fit. The tools are free because the diagnosis should happen before you spend money, not after.
@@ -350,11 +324,11 @@
       <div class="footer-name">eSellerFit</div>
     </div>
     <div class="footer-links">
-      <a href="https://esellerfit.com/legal/terms.html">Terms of Service</a>
-      <a href="https://esellerfit.com/legal/privacy.html">Privacy Policy</a>
-      <a href="https://esellerfit.com/legal/disclaimer.html">Disclaimer</a>
-      <a href="https://esellerfit.com/legal/client-agreement.html">Client Agreement</a>
-      <a href="https://esellerfit.com/legal/refund-policy.html">Refund Policy</a>
+      <a data-legal="terms" href="https://esellerfit.com/legal/terms.html">Terms of Service</a>
+      <a data-legal="privacy" href="https://esellerfit.com/legal/privacy.html">Privacy Policy</a>
+      <a data-legal="disclaimer" href="https://esellerfit.com/legal/disclaimer.html">Disclaimer</a>
+      <a data-legal="clientAgreement" href="https://esellerfit.com/legal/client-agreement.html">Client Agreement</a>
+      <a data-legal="refundPolicy" href="https://esellerfit.com/legal/refund-policy.html">Refund Policy</a>
     </div>
   </div>
 </footer>
