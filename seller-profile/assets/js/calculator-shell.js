@@ -78,9 +78,9 @@ window.ESF_SHELL = {
 
     const body = {
       email: payload.clientEmail || '',
-      tool_type: 'Seller Profile',
-      source_page: window.location.href,
-      source_entry_point: 'seller-profile-start',
+      tool_type: payload.toolType || 'Seller Profile',
+      source_page: payload.sourcePage || window.location.href,
+      source_entry_point: payload.sourceEntryPoint || 'seller-profile-start',
       accepted_at: new Date().toISOString(),
       user_agent: navigator.userAgent,
 
@@ -88,12 +88,18 @@ window.ESF_SHELL = {
       risk: payload.risk ?? '',
       execution: payload.execution ?? '',
       market: payload.market ?? '',
+
       capitalTier: payload.capitalTier || '',
       startPlatform: payload.startPlatform || '',
       scalePlatform: payload.scalePlatform || '',
       greyZone: payload.greyZone || '',
       waitState: payload.waitState || '',
-      weakestMuscle: payload.weakestMuscle || ''
+      weakestMuscle: payload.weakestMuscle || '',
+
+      rawAnswersJson: payload.rawAnswersJson || '',
+      scoresJson: payload.scoresJson || '',
+      resultSummary: payload.resultSummary || '',
+      recommendedDirection: payload.recommendedDirection || ''
     };
 
     try {
