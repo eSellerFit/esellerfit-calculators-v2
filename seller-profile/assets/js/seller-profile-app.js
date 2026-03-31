@@ -47,6 +47,36 @@
       const scores = window.SELLER_PROFILE_ENGINE.score(state.answers);
       const recommendation = window.SELLER_PROFILE_ENGINE.recommend(scores);
 
+      const capitalTier = window.SELLER_PROFILE_ENGINE.capTier(scores.c);
+
+      const startPlatform =
+        recommendation?.state === 'wait'
+          ? 'Wait'
+          : (recommendation?.step1?.platform || '');
+
+      const scalePlatform =
+        recommendation?.state !== 'wait'
+          ? (recommendation?.step2?.platform || '')
+          : '';
+
+      const greyZone = recommendation?.greyZone ? 'Yes' : 'No';
+      const waitState = recommendation?.state === 'wait' ? 'Yes' : 'No';
+
+      const weakestMuscle =
+        recommendation?.state === 'wait'
+          ? (recommendation?.weakest?.dim || '')
+          : '';
+
+      const recommendedDirection =
+        recommendation?.state === 'wait'
+          ? 'Wait'
+          : (recommendation?.step1?.platform || '');
+
+      const resultSummary =
+        recommendation?.state === 'wait'
+          ? `Not ready to launch yet. Primary gap: ${recommendation?.weakest?.dim || 'unknown'}`
+          : `Best starting platform: ${recommendation?.step1?.platform || 'unknown'}`;
+
       await window.ESF_SHELL.submitLead({
         clientEmail: state.clientEmail,
         toolType: 'Seller Profile',
@@ -54,47 +84,27 @@
         sourceEntryPoint: 'seller-profile-start',
 
         rawAnswersJson: JSON.stringify(state.answers),
+        scoresJson: JSON.stringify({
+          capital: scores.c,
+          risk: scores.r,
+          execution: scores.e,
+          market: scores.m
+        }),
 
         capital: scores.c,
         risk: scores.r,
         execution: scores.e,
         market: scores.m,
 
-        capitalTier: window.SELLER_PROFILE_ENGINE.capTier(scores.c),
+        capitalTier,
+        startPlatform,
+        scalePlatform,
+        greyZone,
+        waitState,
+        weakestMuscle,
 
-        startPlatform:
-          recommendation?.state === 'wait'
-            ? 'Wait'
-            : (recommendation?.step1?.platform || ''),
-
-        scalePlatform:
-          recommendation?.state !== 'wait'
-            ? (recommendation?.step2?.platform || '')
-            : '',
-
-        greyZone: recommendation?.greyZone ? 'Yes' : 'No',
-        waitState: recommendation?.state === 'wait' ? 'Yes' : 'No',
-        weakestMuscle:
-          recommendation?.state === 'wait'
-            ? (recommendation?.weakest?.dim || '')
-            : '',
-
-        recommendedDirection:
-          recommendation?.state === 'wait'
-            ? 'Wait'
-            : (recommendation?.step1?.platform || ''),
-
-        resultSummary:
-          recommendation?.state === 'wait'
-            ? `Not ready to launch yet. Primary gap: ${recommendation?.weakest?.dim || 'unknown'}`
-            : `Best starting platform: ${recommendation?.step1?.platform || 'unknown'}`,
-
-        scoresJson: JSON.stringify({
-          capital: scores.c,
-          risk: scores.r,
-          execution: scores.e,
-          market: scores.m
-        })
+        recommendedDirection,
+        resultSummary
       });
 
       setTimeout(() => {
