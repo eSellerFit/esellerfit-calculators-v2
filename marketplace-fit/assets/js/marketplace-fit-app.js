@@ -48,8 +48,22 @@
       const platformScores = window.MARKETPLACE_FIT_ENGINE.platformScores(layerScores);
       const sorted = window.MARKETPLACE_FIT_ENGINE.sortedPlatforms(platformScores);
 
-      const topPlatform = sorted?.[0]?.[0] || '';
-      const secondPlatform = sorted?.[1]?.[0] || '';
+      const rawTopPlatform = sorted?.[0]?.[0] || '';
+      const rawSecondPlatform = sorted?.[1]?.[0] || '';
+
+      const normalizePlatform = (value) => {
+        if (!value) return '';
+        const map = {
+          amazon: 'Amazon',
+          shopify: 'Shopify',
+          etsy: 'Etsy'
+        };
+        return map[String(value).toLowerCase()] || value;
+      };
+
+      const topPlatform = normalizePlatform(rawTopPlatform);
+      const secondPlatform = normalizePlatform(rawSecondPlatform);
+
       const topScore = sorted?.[0]?.[1] || 0;
       const secondScore = sorted?.[1]?.[1] || 0;
       const platformGap = Number((topScore - secondScore).toFixed(1));
