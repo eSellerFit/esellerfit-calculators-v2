@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxzym1dpMmCezcBk4cIBE_9HaSw2w4iIva5okt1gxTkv0WVMhCz68BarR7iKDTuth7z/exec';
+const APPS_SCRIPT_URL = 'https://hook.us2.make.com/nlz437jbe9lx9f2llujukmpnpdgtyoqv'';
 const FREE_CALENDAR_URL = 'https://calendar.app.google/pyGqWmbNSGP1xfxu6';
 
 async function getClientInfo() {
