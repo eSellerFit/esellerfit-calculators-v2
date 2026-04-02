@@ -1,116 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Disclaimer — eSellerFit</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.65;
-      color: #1a1a1a;
-      background: #faf8f3;
-    }
-    h1 { font-size: 28px; margin-bottom: 8px; margin-top: 0; color: #0f6e56; }
-    .meta { font-size: 13px; color: #7a7065; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #d8d0c4; }
-    h2 { font-size: 16px; margin-top: 35px; margin-bottom: 15px; color: #0f6e56; }
-    p { margin-bottom: 12px; }
-    ul { margin-left: 20px; margin-bottom: 12px; }
-    li { margin-bottom: 6px; }
-    a { color: #0f6e56; text-decoration: none; border-bottom: 1px solid rgba(15, 110, 86, 0.3); }
-    a:hover { border-bottom: 1px solid #0f6e56; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | eSellerFit</title>
+    <meta name="description" content="eSellerFit LLC Disclaimer. Effective March 23, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Syne:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #f6f3ed;
+            --bg-surface: #ffffff;
+            --bg-elevated: #fbf8f3;
+            --bg-soft: #f1ece4;
+            --teal: #0f6e56;
+            --teal-light: #167a63;
+            --teal-dim: #d8ebe5;
+            --text-primary: #1d211f;
+            --text-secondary: #4f5a54;
+            --text-muted: #7a7b74;
+            --border: #ddd6ca;
+            --border-light: #e9e2d7;
+            --shadow: 0 10px 28px rgba(31, 27, 20, 0.05);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Syne', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.78;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .legal-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(246, 243, 237, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(221, 214, 202, 0.85);
+            padding: 10px 0;
+        }
+
+        .legal-topbar-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .legal-topbar a.brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.02rem;
+            color: var(--teal);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .legal-topbar a.brand span {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .legal-topbar-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .legal-topbar-links a {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .legal-topbar-links a:hover,
+        .legal-topbar-links a.active {
+            color: var(--teal);
+        }
+
+        .legal-hero {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 40px 24px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 4.2vw, 2.55rem);
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .legal-hero .doc-entity {
+            font-size: 0.96rem;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .legal-hero .doc-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.65;
+        }
+
+        .legal-hero .doc-meta span {
+            margin-right: 18px;
+        }
+
+        .legal-content {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 34px 24px 84px;
+        }
+
+        .legal-notice {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--teal);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 34px;
+            font-size: 0.93rem;
+            line-height: 1.72;
+            color: var(--text-secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .legal-notice strong {
+            color: var(--text-primary);
+        }
+
+        .legal-section {
+            margin-bottom: 34px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px 24px 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .legal-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.28rem;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-light);
+            line-height: 1.35;
+        }
+
+        .legal-section h2 .section-num {
+            color: var(--teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.83rem;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .legal-section h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin: 18px 0 10px;
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 0.97rem;
+        }
+
+        .legal-section ul,
+        .legal-section ol {
+            margin: 12px 0 14px 22px;
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+        }
+
+        .legal-section li {
+            margin-bottom: 7px;
+        }
+
+        .legal-section a {
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(15, 110, 86, 0.2);
+        }
+
+        .legal-section a:hover {
+            border-bottom-color: var(--teal);
+        }
+
+        .legal-section .precedence-list {
+            list-style: none;
+            margin-left: 0;
+            counter-reset: precedence;
+        }
+
+        .legal-section .precedence-list li {
+            counter-increment: precedence;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--teal-dim);
+            border-radius: 8px;
+            font-size: 0.93rem;
+        }
+
+        .legal-section .precedence-list li::before {
+            content: counter(precedence) ".";
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--teal);
+            font-weight: 500;
+            margin-right: 10px;
+            font-size: 0.84rem;
+        }
+
+        .legal-section .caps-block {
+            text-transform: uppercase;
+            font-size: 0.86rem;
+            letter-spacing: 0.015em;
+            line-height: 1.85;
+        }
+
+        .earned-fee-table,
+        .retention-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 6px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .earned-fee-table td,
+        .retention-table td,
+        .retention-table th {
+            padding: 11px 14px;
+            border: 1px solid var(--border-light);
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .earned-fee-table td:first-child,
+        .retention-table th {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--teal);
+            font-weight: 500;
+            background: var(--bg-elevated);
+        }
+
+        .earned-fee-table td:first-child {
+            width: 110px;
+            text-align: center;
+        }
+
+        .retention-table th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .legal-footer {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 28px 24px 42px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .legal-footer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.7;
+        }
+
+        .legal-footer .version-badge {
+            display: inline-block;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-light);
+            border-radius: 999px;
+            padding: 5px 12px;
+            font-size: 0.72rem;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 760px) {
+            .legal-topbar {
+                position: static;
+                padding: 12px 0;
+            }
+
+            .legal-topbar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .legal-topbar-links {
+                gap: 10px 14px;
+                justify-content: flex-start;
+            }
+
+            .legal-topbar-links a {
+                font-size: 0.68rem;
+            }
+
+            .legal-hero {
+                padding: 30px 20px 18px;
+            }
+
+            .legal-content {
+                padding: 24px 20px 56px;
+            }
+
+            .legal-section {
+                padding: 20px 18px 18px;
+                margin-bottom: 24px;
+            }
+
+            .legal-hero .doc-meta span {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 2px;
+            }
+
+            .earned-fee-table td,
+            .retention-table td,
+            .retention-table th {
+                padding: 10px 10px;
+                font-size: 0.86rem;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
-<h1>DISCLAIMER</h1>
-<div class="meta">
-  eSellerFit LLC<br>
-  Effective Date: March 23, 2026<br>
-  Last Updated: March 23, 2026
-</div>
+    <nav class="legal-topbar">
+        <div class="legal-topbar-inner">
+            <a href="/" class="brand">eSellerFit <span>Legal</span></a>
+            <div class="legal-topbar-links">
+                <a href="terms.html">Terms</a>
+                <a href="client-agreement.html">Client Agreement</a>
+                <a href="refund-policy.html">Refund Policy</a>
+                <a href="disclaimer.html" class="active">Disclaimer</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
 
-<p>This Disclaimer provides additional notice regarding the limits of eSellerFit's advisory services. It is intended to supplement, not replace, the Terms of Service and Client Agreement. If there is a conflict, the higher-priority agreement controls.</p>
+    <header class="legal-hero">
+        <div class="doc-entity">eSellerFit LLC</div>
+        <h1>Disclaimer</h1>
+        <div class="doc-meta">
+            <span>Effective: March 23, 2026</span>
+            <span>Updated: April 2, 2026</span>
+            <span>v1.1</span>
+        </div>
+    </header>
 
-<h2>1. ADVISORY SERVICES ONLY</h2>
+    <main class="legal-content">
 
-<p>eSellerFit provides consulting, educational, and strategic advisory services only. Recommendations are based on information provided by the client, publicly available information, third-party tools, and professional judgment.</p>
+        <div class="legal-notice">
+            This Disclaimer provides additional notice regarding the limits of eSellerFit's advisory services. It is intended to supplement, not replace, the Terms of Service and Client Agreement. If there is a conflict, the higher-priority agreement controls.
+        </div>
 
-<p>Recommendations are not guarantees, predictions, or promises of outcome.</p>
+        <section class="legal-section">
+            <h2><span class="section-num">§1</span> Advisory Services Only</h2>
+            <p>eSellerFit provides consulting, educational, and strategic advisory services only. Recommendations are based on information provided by the client, publicly available information, third-party tools, and professional judgment.</p>
+            <p>Recommendations are not guarantees, predictions, or promises of outcome.</p>
+        </section>
 
-<h2>2. NO LICENSED PROFESSIONAL SERVICES</h2>
+        <section class="legal-section">
+            <h2><span class="section-num">§2</span> No Licensed Professional Services</h2>
+            <p>eSellerFit is not acting as your attorney, accountant, tax preparer, financial advisor, investment advisor, broker, or regulated fiduciary.</p>
+            <p>eSellerFit does not provide:</p>
+            <ul>
+                <li>legal advice;</li>
+                <li>tax advice or accounting services;</li>
+                <li>securities or investment advice;</li>
+                <li>regulated financial planning;</li>
+                <li>compliance certification; or</li>
+                <li>any other licensed professional service.</li>
+            </ul>
+            <p>You should consult appropriately licensed professionals before making legal, tax, financial, compliance, or major business decisions.</p>
+        </section>
 
-<p>eSellerFit is not acting as your attorney, accountant, tax preparer, financial advisor, investment advisor, broker, or regulated fiduciary.</p>
+        <section class="legal-section">
+            <h2><span class="section-num">§3</span> No Guarantee of Results</h2>
+            <p>eSellerFit does not guarantee:</p>
+            <ul>
+                <li>revenue, profit, margin, ROI, or break-even timing;</li>
+                <li>customer demand, conversion, or product-market fit;</li>
+                <li>marketplace approval, visibility, ranking, or account health;</li>
+                <li>stability of platform rules, fees, algorithms, or features; or</li>
+                <li>business success of any kind.</li>
+            </ul>
+            <p>Business outcomes depend on many variables outside eSellerFit's control, including execution, pricing, product quality, reviews, capital, timing, competition, macroeconomic conditions, and marketplace changes.</p>
+        </section>
 
-<p>eSellerFit does not provide:</p>
-<ul>
-  <li>legal advice;</li>
-  <li>tax advice or accounting services;</li>
-  <li>securities or investment advice;</li>
-  <li>regulated financial planning;</li>
-  <li>compliance certification; or</li>
-  <li>any other licensed professional service.</li>
-</ul>
+        <section class="legal-section">
+            <h2><span class="section-num">§4</span> Third-Party Information and Platforms</h2>
+            <p>eSellerFit may refer to third-party tools, software, websites, marketplaces, and publicly available information. eSellerFit is not affiliated with those third parties unless expressly stated.</p>
+            <p>Third-party data and tools may be incomplete, delayed, inaccurate, or subject to change. Marketplace platforms may change policies, fees, eligibility requirements, algorithms, and enforcement practices at any time.</p>
+        </section>
 
-<p>You should consult appropriately licensed professionals before making legal, tax, financial, compliance, or major business decisions.</p>
+        <section class="legal-section">
+            <h2><span class="section-num">§5</span> Your Decisions and Risk</h2>
+            <p>You are solely responsible for:</p>
+            <ul>
+                <li>evaluating whether to act on any recommendation;</li>
+                <li>verifying assumptions, inputs, and current marketplace information;</li>
+                <li>your own legal, tax, and regulatory compliance;</li>
+                <li>your products, listings, claims, pricing, customer handling, and operations; and</li>
+                <li>all business decisions and resulting outcomes.</li>
+            </ul>
+            <p>You assume the business risk of implementation.</p>
+        </section>
 
-<h2>3. NO GUARANTEE OF RESULTS</h2>
+        <section class="legal-section">
+            <h2><span class="section-num">§6</span> Forward-Looking or Illustrative Content</h2>
+            <p>Any examples, scenarios, estimates, comparisons, frameworks, or projections are illustrative only. They are not promises of future performance and should not be interpreted as guaranteed outcomes.</p>
+        </section>
 
-<p>eSellerFit does not guarantee:</p>
-<ul>
-  <li>revenue, profit, margin, ROI, or break-even timing;</li>
-  <li>customer demand, conversion, or product-market fit;</li>
-  <li>marketplace approval, visibility, ranking, or account health;</li>
-  <li>stability of platform rules, fees, algorithms, or features; or</li>
-  <li>business success of any kind.</li>
-</ul>
+        <section class="legal-section">
+            <h2><span class="section-num">§7</span> Limitation Notice</h2>
+            <p>The Terms of Service and Client Agreement contain important limitations of liability, disclaimers of warranties, and allocation of risk. By using the services, you acknowledge those provisions as part of the overall agreement.</p>
+        </section>
 
-<p>Business outcomes depend on many variables outside eSellerFit's control, including execution, pricing, product quality, reviews, capital, timing, competition, macroeconomic conditions, and marketplace changes.</p>
+        <section class="legal-section">
+            <h2><span class="section-num">§8</span> Changes</h2>
+            <p>This Disclaimer may be updated for future bookings or future use by posting an updated version and updating the "Last Updated" date. Unless required by law, changes apply prospectively, not retroactively.</p>
+        </section>
 
-<h2>4. THIRD-PARTY INFORMATION AND PLATFORMS</h2>
+        <section class="legal-section">
+            <h2><span class="section-num">§9</span> Contact</h2>
+            <p>eSellerFit LLC<br>
+            Email: <a href="mailto:contact@esellerfit.com" style="color: var(--teal-light); text-decoration: none;">contact@esellerfit.com</a></p>
+        </section>
 
-<p>eSellerFit may refer to third-party tools, software, websites, marketplaces, and publicly available information. eSellerFit is not affiliated with those third parties unless expressly stated.</p>
+    </main>
 
-<p>Third-party data and tools may be incomplete, delayed, inaccurate, or subject to change. Marketplace platforms may change policies, fees, eligibility requirements, algorithms, and enforcement practices at any time.</p>
-
-<h2>5. YOUR DECISIONS AND RISK</h2>
-
-<p>You are solely responsible for:</p>
-<ul>
-  <li>evaluating whether to act on any recommendation;</li>
-  <li>verifying assumptions, inputs, and current marketplace information;</li>
-  <li>your own legal, tax, and regulatory compliance;</li>
-  <li>your products, listings, claims, pricing, customer handling, and operations; and</li>
-  <li>all business decisions and resulting outcomes.</li>
-</ul>
-
-<p>You assume the business risk of implementation.</p>
-
-<h2>6. FORWARD-LOOKING OR ILLUSTRATIVE CONTENT</h2>
-
-<p>Any examples, scenarios, estimates, comparisons, frameworks, or projections are illustrative only. They are not promises of future performance and should not be interpreted as guaranteed outcomes.</p>
-
-<h2>7. LIMITATION NOTICE</h2>
-
-<p>The Terms of Service and Client Agreement contain important limitations of liability, disclaimers of warranties, and allocation of risk. By using the services, you acknowledge those provisions as part of the overall agreement.</p>
-
-<h2>8. CHANGES</h2>
-
-<p>This Disclaimer may be updated for future bookings or future use by posting an updated version and updating the "Last Updated" date. Unless required by law, changes apply prospectively, not retroactively.</p>
-
-<h2>9. CONTACT</h2>
-
-<p><strong>eSellerFit LLC</strong><br>
-Email: <a href="mailto:contact@esellerfit.com">contact@esellerfit.com</a></p>
-
-<p style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #d8d0c4; font-size: 12px; color: #7a7065;">
-  eSellerFit LLC Disclaimer<br>
-  Effective March 23, 2026 | Westchester County, New York
-</p>
+    <footer class="legal-footer">
+        <span class="version-badge">v1.1</span>
+        <p>eSellerFit LLC Disclaimer<br>
+        Effective March 23, 2026 &middot; Last Updated: April 2, 2026<br>
+        Westchester County, New York</p>
+    </footer>
 
 </body>
 </html>

@@ -1,291 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service — eSellerFit</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.65;
-      color: #1a1a1a;
-      background: #faf8f3;
-    }
-    h1 { font-size: 28px; margin-bottom: 8px; color: #0f6e56; }
-    .meta { font-size: 13px; color: #7a7065; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #d8d0c4; }
-    h2 { font-size: 16px; margin-top: 35px; margin-bottom: 15px; color: #0f6e56; }
-    p { margin-bottom: 12px; }
-    ul, ol { margin-left: 20px; margin-bottom: 12px; }
-    li { margin-bottom: 6px; }
-    a { color: #0f6e56; text-decoration: none; border-bottom: 1px solid rgba(15, 110, 86, 0.3); }
-    a:hover { border-bottom: 1px solid #0f6e56; }
-    strong { font-weight: 600; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | eSellerFit</title>
+    <meta name="description" content="eSellerFit LLC Terms of Service. Effective March 23, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Syne:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #f6f3ed;
+            --bg-surface: #ffffff;
+            --bg-elevated: #fbf8f3;
+            --bg-soft: #f1ece4;
+            --teal: #0f6e56;
+            --teal-light: #167a63;
+            --teal-dim: #d8ebe5;
+            --text-primary: #1d211f;
+            --text-secondary: #4f5a54;
+            --text-muted: #7a7b74;
+            --border: #ddd6ca;
+            --border-light: #e9e2d7;
+            --shadow: 0 10px 28px rgba(31, 27, 20, 0.05);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Syne', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.78;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .legal-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(246, 243, 237, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(221, 214, 202, 0.85);
+            padding: 10px 0;
+        }
+
+        .legal-topbar-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .legal-topbar a.brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.02rem;
+            color: var(--teal);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .legal-topbar a.brand span {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .legal-topbar-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .legal-topbar-links a {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .legal-topbar-links a:hover,
+        .legal-topbar-links a.active {
+            color: var(--teal);
+        }
+
+        .legal-hero {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 40px 24px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 4.2vw, 2.55rem);
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .legal-hero .doc-entity {
+            font-size: 0.96rem;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .legal-hero .doc-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.65;
+        }
+
+        .legal-hero .doc-meta span {
+            margin-right: 18px;
+        }
+
+        .legal-content {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 34px 24px 84px;
+        }
+
+        .legal-notice {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--teal);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 34px;
+            font-size: 0.93rem;
+            line-height: 1.72;
+            color: var(--text-secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .legal-notice strong {
+            color: var(--text-primary);
+        }
+
+        .legal-section {
+            margin-bottom: 34px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px 24px 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .legal-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.28rem;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-light);
+            line-height: 1.35;
+        }
+
+        .legal-section h2 .section-num {
+            color: var(--teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.83rem;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .legal-section h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin: 18px 0 10px;
+        }
+
+        .legal-section p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 0.97rem;
+        }
+
+        .legal-section ul,
+        .legal-section ol {
+            margin: 12px 0 14px 22px;
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+        }
+
+        .legal-section li {
+            margin-bottom: 7px;
+        }
+
+        .legal-section a {
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(15, 110, 86, 0.2);
+        }
+
+        .legal-section a:hover {
+            border-bottom-color: var(--teal);
+        }
+
+        .legal-section .precedence-list {
+            list-style: none;
+            margin-left: 0;
+            counter-reset: precedence;
+        }
+
+        .legal-section .precedence-list li {
+            counter-increment: precedence;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--teal-dim);
+            border-radius: 8px;
+            font-size: 0.93rem;
+        }
+
+        .legal-section .precedence-list li::before {
+            content: counter(precedence) ".";
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--teal);
+            font-weight: 500;
+            margin-right: 10px;
+            font-size: 0.84rem;
+        }
+
+        .legal-section .caps-block {
+            text-transform: uppercase;
+            font-size: 0.86rem;
+            letter-spacing: 0.015em;
+            line-height: 1.85;
+        }
+
+        .earned-fee-table,
+        .retention-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 6px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .earned-fee-table td,
+        .retention-table td,
+        .retention-table th {
+            padding: 11px 14px;
+            border: 1px solid var(--border-light);
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .earned-fee-table td:first-child,
+        .retention-table th {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--teal);
+            font-weight: 500;
+            background: var(--bg-elevated);
+        }
+
+        .earned-fee-table td:first-child {
+            width: 110px;
+            text-align: center;
+        }
+
+        .retention-table th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .legal-footer {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 28px 24px 42px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .legal-footer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.7;
+        }
+
+        .legal-footer .version-badge {
+            display: inline-block;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-light);
+            border-radius: 999px;
+            padding: 5px 12px;
+            font-size: 0.72rem;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 760px) {
+            .legal-topbar {
+                position: static;
+                padding: 12px 0;
+            }
+
+            .legal-topbar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .legal-topbar-links {
+                gap: 10px 14px;
+                justify-content: flex-start;
+            }
+
+            .legal-topbar-links a {
+                font-size: 0.68rem;
+            }
+
+            .legal-hero {
+                padding: 30px 20px 18px;
+            }
+
+            .legal-content {
+                padding: 24px 20px 56px;
+            }
+
+            .legal-section {
+                padding: 20px 18px 18px;
+                margin-bottom: 24px;
+            }
+
+            .legal-hero .doc-meta span {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 2px;
+            }
+
+            .earned-fee-table td,
+            .retention-table td,
+            .retention-table th {
+                padding: 10px 10px;
+                font-size: 0.86rem;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
-<h1>TERMS OF SERVICE</h1>
-<div class="meta">
-  eSellerFit LLC<br>
-  Effective Date: March 23, 2026<br>
-  Last Updated: March 23, 2026
-</div>
-
-<pre style="white-space: pre-wrap; font-family: inherit; background: none; padding: 0;">
-IMPORTANT: By accessing or using eSellerFit services, including free tools, free introductory calls, and paid services, you agree to these Terms of Service. If you do not agree, do not use the services.
-
-These Terms govern general use of the website and services. Paid services are also subject to the Client Agreement, Refund Policy, Disclaimer, and Privacy Policy.
-
---------------------------------------------------------------------------------
-
-1. ORDER OF PRECEDENCE AND GOVERNING VERSION
-
-The following documents form one integrated agreement between you and eSellerFit:
-
-  1. Signed Client Agreement, Order Form, or other signed service-specific agreement
-  2. Statement of Work or service-specific written scope, if any
-  3. These Terms of Service
-  4. Refund Policy
-  5. Disclaimer
-  6. Privacy Policy
-
-If there is a conflict, the higher-priority document controls.
-
-No Statement of Work is required. An SOW applies only if eSellerFit issues one in writing for a specific engagement.
-
-For a paid booking, the version of these Terms, the Refund Policy, the Disclaimer, and the Privacy Policy in effect at the time of booking will govern that booking, unless a later change is required by law or is more favorable to the client.
-
-eSellerFit may update these Terms for future use or future bookings by posting an updated version on the website and updating the "Last Updated" date. For material changes, eSellerFit may also provide additional notice by email or by a prominent notice on the website at least 15 days before the change applies to future bookings.
-
---------------------------------------------------------------------------------
-
-2. ACCEPTANCE OF TERMS
-
-For paid services, you agree to these documents by completing checkout, submitting payment, and affirmatively confirming acceptance through the checkout flow. eSellerFit may rely on electronic records such as a checkbox, timestamp, transaction record, and related payment or booking records as evidence of assent.
-
-For free tools, website resources, and free 30-minute introductory calls, your access to or use of those services constitutes acceptance of these Terms, the Disclaimer, and the Privacy Policy.
-
---------------------------------------------------------------------------------
-
-3. SERVICES
-
-eSellerFit LLC ("eSellerFit," "Company," "we," "us," or "our") provides online consulting and advisory services designed to help e-commerce sellers evaluate marketplace platforms and develop entry strategies.
-
-Services may include:
-  - free diagnostic tools
-  - a free 30-minute introductory call
-  - a paid Seller Profile Deep-Dive
-  - a paid Entry Strategy or similar advisory package
-  - related written summaries, dossiers, and communications
-
-Service descriptions, pricing, and features may change from time to time for future customers.
-
---------------------------------------------------------------------------------
-
-4. NO LEGAL, TAX, FINANCIAL, OR INVESTMENT ADVICE
-
-eSellerFit provides educational and advisory services only. eSellerFit does not provide legal advice, tax advice, accounting advice, investment advice, brokerage services, or regulated professional services requiring licensure.
-
-You are responsible for obtaining advice from appropriately licensed professionals before making legal, tax, financial, investment, compliance, or other major business decisions.
-
---------------------------------------------------------------------------------
-
-5. ELIGIBILITY AND AUTHORITY
-
-By using the services, you represent that:
-  - you are at least 18 years old;
-  - you have legal capacity to enter into a binding agreement; and
-  - if you are acting for a company or other entity, you have authority to bind that entity.
-
---------------------------------------------------------------------------------
-
-6. PERMITTED USE AND RESTRICTIONS
-
-You agree to use the services only for lawful purposes and for your own internal business planning and evaluation.
-
-You may not:
-  - reproduce, republish, sell, sublicense, or redistribute eSellerFit content, frameworks, tools, or deliverables except as expressly permitted;
-  - copy, scrape, crawl, harvest, reverse engineer, or otherwise extract data or functionality from the website or tools;
-  - use bots, scripts, or automated means to access or interfere with the services;
-  - use the services to build a competing product or service;
-  - introduce malware, attempt unauthorized access, or interfere with site functionality;
-  - impersonate another person or provide false information.
-
---------------------------------------------------------------------------------
-
-7. PAYMENT TERMS
-
-Paid services must be paid in advance unless eSellerFit agrees otherwise in writing.
-
-Payments are processed through third-party payment processors such as Stripe. By submitting payment information, you authorize the applicable charge.
-
-Unless expressly stated otherwise:
-  - prices are listed in U.S. dollars;
-  - prices do not include taxes that may apply by law; and
-  - you are responsible for any applicable taxes, bank fees, currency conversion fees, or similar charges.
-
-Refund eligibility is governed exclusively by the Refund Policy and any higher-priority signed agreement.
-
---------------------------------------------------------------------------------
-
-8. RELATIONSHIP OF THE PARTIES
-
-The relationship between you and eSellerFit is that of independent contracting parties. Nothing in these Terms or any related agreement creates any partnership, joint venture, agency, employment, franchise, fiduciary, or similar relationship. Neither party has authority to bind the other except as expressly agreed in writing.
-
---------------------------------------------------------------------------------
-
-9. CLIENT RESPONSIBILITY
-
-You acknowledge that:
-  - you are solely responsible for your own decisions, actions, implementation, and results;
-  - e-commerce and marketplace selling involve substantial business risk;
-  - platform rules, fees, algorithms, and market conditions can change at any time;
-  - your results depend on many factors outside eSellerFit's control, including execution, timing, capital, product quality, pricing, competition, and demand; and
-  - you are responsible for legal compliance, tax compliance, licenses, permits, product claims, customer communications, and marketplace compliance.
-
---------------------------------------------------------------------------------
-
-10. INTELLECTUAL PROPERTY
-
-All rights, title, and interest in and to the eSellerFit website, brand, content, tools, frameworks, templates, methodologies, and pre-existing materials are and remain the exclusive property of eSellerFit or its licensors.
-
-Except as expressly permitted in a signed higher-priority agreement, you receive no ownership rights in eSellerFit intellectual property.
-
-You retain ownership of the information and materials you submit to eSellerFit. You grant eSellerFit a limited, non-exclusive license to use that information solely to provide the services, operate the business, maintain records, enforce agreements, and improve services in de-identified or aggregated form.
-
---------------------------------------------------------------------------------
-
-11. CONFIDENTIALITY
-
-eSellerFit will use reasonable care to protect non-public client information shared for the purpose of receiving services and will not intentionally disclose it to third parties except:
-  - as reasonably necessary to provide the services;
-  - to service providers, advisors, or contractors with a need to know and subject to appropriate confidentiality obligations;
-  - as required by law, court order, subpoena, or legal process;
-  - to protect rights, safety, property, or enforce agreements; or
-  - if the information becomes publicly available through no breach by eSellerFit.
-
-You agree not to disclose, share, or use eSellerFit proprietary tools, frameworks, methods, pricing logic, or deliverable structures except as permitted by the applicable agreement.
-
---------------------------------------------------------------------------------
-
-12. DISCLAIMER OF WARRANTIES
-
-THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." TO THE MAXIMUM EXTENT PERMITTED BY LAW, ESELLERFIT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
-
-eSellerFit does not warrant that:
-  - recommendations will produce any particular result;
-  - services will be uninterrupted or error-free;
-  - data, research, or third-party information will always be complete, current, or accurate; or
-  - any marketplace or third-party platform will act consistently with any recommendation.
-
---------------------------------------------------------------------------------
-
-13. LIMITATION OF LIABILITY
-
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, ESELLERFIT'S TOTAL LIABILITY ARISING OUT OF OR RELATING TO THE SERVICES OR THESE TERMS WILL NOT EXCEED THE AMOUNT YOU PAID FOR THE SPECIFIC PAID SERVICE GIVING RISE TO THE CLAIM. IF THE CLAIM RELATES ONLY TO A FREE SERVICE, ESELLERFIT'S TOTAL LIABILITY WILL NOT EXCEED $50.
-
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, ESELLERFIT WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOST PROFITS, LOST REVENUE, LOST DATA, LOST OPPORTUNITY, BUSINESS INTERRUPTION, OR DIMINUTION IN VALUE, EVEN IF ADVISED OF THE POSSIBILITY.
-
-Nothing in this agreement excludes liability that cannot be excluded under applicable law.
-
---------------------------------------------------------------------------------
-
-14. INDEMNIFICATION
-
-You agree to indemnify, defend, and hold harmless eSellerFit LLC, its owner, affiliates, contractors, and representatives from and against third-party claims, losses, liabilities, damages, judgments, and reasonable attorneys' fees arising out of or related to:
-  - your breach of these Terms or any related agreement;
-  - your misuse of the services;
-  - your products, services, content, marketing, customer disputes, or business operations; or
-  - your violation of law or third-party rights.
-
---------------------------------------------------------------------------------
-
-15. THIRD-PARTY SERVICES
-
-The services may rely on or reference third-party services such as Stripe, Zoom, scheduling tools, analytics providers, and marketplace platforms. Those third parties operate under their own terms and policies. eSellerFit is not responsible for third-party acts, omissions, outages, policies, or data practices.
-
---------------------------------------------------------------------------------
-
-16. ELECTRONIC COMMUNICATIONS AND SIGNATURES
-
-You consent to receive communications from eSellerFit electronically, including by email and through the website. You agree that electronic records, notices, disclosures, and signatures satisfy any legal requirement for writing.
-
---------------------------------------------------------------------------------
-
-17. SESSION RECORDINGS
-
-eSellerFit may record a consultation session only with your verbal or written consent. If you do not consent, the session will not be recorded. Recordings, if any, are confidential business records of eSellerFit unless otherwise agreed in writing.
-
---------------------------------------------------------------------------------
-
-18. TERMINATION
-
-eSellerFit may suspend or terminate access to the services, cancel a booking, or refuse future service if you:
-  - breach these Terms or any related policy or agreement;
-  - provide false or misleading information;
-  - misuse the website, tools, or deliverables;
-  - engage in abusive, threatening, or unlawful conduct; or
-  - materially interfere with service delivery.
-
-If eSellerFit terminates for your cause, refund rights, if any, are governed by the Refund Policy and any signed agreement.
-
---------------------------------------------------------------------------------
-
-19. FORCE MAJEURE
-
-Neither party will be liable for delay or failure to perform caused by events beyond reasonable control, including illness, internet or platform outages, cyber incidents, acts of government, labor disruptions, natural disasters, severe weather, war, terrorism, or similar events. The affected party will use reasonable efforts to resume performance. For paid services, remedies for scheduling disruption are governed by the Refund Policy and Client Agreement.
-
---------------------------------------------------------------------------------
-
-20. DISPUTE RESOLUTION; GOVERNING LAW; VENUE
-
-These Terms are governed by the laws of the State of New York, without regard to conflict of laws rules.
-
-Before filing a lawsuit, the parties will first attempt in good faith to resolve the dispute through written notice and informal discussion for at least 30 days.
-
-Either party may request non-binding mediation in Westchester County, New York. If mediation is not pursued or does not resolve the dispute, any legal action must be brought exclusively in the state courts located in Westchester County, New York, or in the United States District Court for the Southern District of New York, and each party consents to that venue and jurisdiction.
-
-Nothing in this section prevents either party from seeking temporary injunctive or equitable relief in a court of competent jurisdiction.
-
---------------------------------------------------------------------------------
-
-21. NO WAIVER; SEVERABILITY; ASSIGNMENT
-
-No waiver is effective unless in writing. A failure to enforce any provision is not a waiver.
-
-If any provision is held unenforceable, the remaining provisions will remain in effect and the unenforceable provision will be enforced to the maximum extent permitted.
-
-You may not assign your rights or obligations without eSellerFit's prior written consent. eSellerFit may assign this agreement in connection with a merger, sale of assets, reorganization, or similar transaction.
-
---------------------------------------------------------------------------------
-
-22. ENTIRE AGREEMENT
-
-These Terms, together with the applicable Client Agreement, Refund Policy, Disclaimer, Privacy Policy, and any service-specific writing incorporated by reference, constitute the entire agreement between you and eSellerFit concerning the subject matter covered.
-
---------------------------------------------------------------------------------
-
-23. CONTACT
-
-eSellerFit LLC
-Email: contact@esellerfit.com
-
---------------------------------------------------------------------------------
-
-eSellerFit LLC Terms of Service
-Version 2.0 | Effective March 23, 2026 | Last Updated: March 23, 2026
-Westchester County, New York
-
-</pre>
-
-<p style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #d8d0c4; font-size: 12px; color: #7a7065;">
-  eSellerFit LLC Terms of Service<br>
-  Effective March 23, 2026 | Westchester County, New York
-</p>
+    <nav class="legal-topbar">
+        <div class="legal-topbar-inner">
+            <a href="/" class="brand">eSellerFit <span>Legal</span></a>
+            <div class="legal-topbar-links">
+                <a href="terms.html" class="active">Terms</a>
+                <a href="client-agreement.html">Client Agreement</a>
+                <a href="refund-policy.html">Refund Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="legal-hero">
+        <div class="doc-entity">eSellerFit LLC</div>
+        <h1>Terms of Service</h1>
+        <div class="doc-meta">
+            <span>Effective: March 23, 2026</span>
+            <span>Updated: April 2, 2026</span>
+            <span>v2.1</span>
+        </div>
+    </header>
+
+    <main class="legal-content">
+
+        <div class="legal-notice">
+            <strong>IMPORTANT:</strong> By accessing or using eSellerFit services, including free tools, free introductory calls, and paid services, you agree to these Terms of Service. If you do not agree, do not use the services.<br><br>
+            These Terms govern general use of the website and services. Paid services are also subject to the Client Agreement, Refund Policy, Disclaimer, and Privacy Policy.
+        </div>
+
+        <!-- Section 1 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§1</span> Order of Precedence and Governing Version</h2>
+            <p>The following documents form one integrated agreement between you and eSellerFit:</p>
+            <ol class="precedence-list">
+                <li>Individually signed Client Agreement, Order Form, or other signed service-specific agreement</li>
+                <li>Statement of Work or service-specific written scope, if any</li>
+                <li>Client Agreement</li>
+                <li>Terms of Service</li>
+                <li>Refund Policy</li>
+                <li>Disclaimer</li>
+                <li>Privacy Policy</li>
+            </ol>
+            <p>If there is a conflict, the higher-priority document controls.</p>
+            <p>No Statement of Work is required. An SOW applies only if eSellerFit issues one in writing for a specific engagement.</p>
+            <p>For a paid booking, the version of these Terms, the Refund Policy, the Disclaimer, and the Privacy Policy in effect at the time of booking will govern that booking, unless a later change is required by law or is more favorable to the client.</p>
+            <p>eSellerFit may update these Terms for future use or future bookings by posting an updated version on the website and updating the "Last Updated" date. For material changes, eSellerFit may also provide additional notice by email or by a prominent notice on the website at least 15 days before the change applies to future bookings.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§2</span> Acceptance of Terms</h2>
+            <p>For paid services, you agree to these documents by affirmatively confirming acceptance on the booking page before proceeding to payment. eSellerFit may rely on electronic records such as a checkbox confirmation, timestamp, session record, transaction record, and related booking or payment records as evidence of assent.</p>
+            <p>For free tools, website resources, and free 30-minute introductory calls, your access to or use of those services constitutes acceptance of these Terms, the Disclaimer, and the Privacy Policy.</p>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§3</span> Services</h2>
+            <p>eSellerFit LLC ("eSellerFit," "Company," "we," "us," or "our") provides online consulting and advisory services designed to help e-commerce sellers evaluate marketplace platforms and develop entry strategies.</p>
+            <p>Services may include:</p>
+            <ul>
+                <li>free diagnostic tools</li>
+                <li>a free 30-minute introductory call</li>
+                <li>a paid Seller Profile Deep-Dive</li>
+                <li>a paid Entry Strategy or similar advisory package</li>
+                <li>related written summaries, dossiers, and communications</li>
+            </ul>
+            <p>Service descriptions, pricing, and features may change from time to time for future customers.</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§4</span> No Legal, Tax, Financial, or Investment Advice</h2>
+            <p>eSellerFit provides educational and advisory services only. eSellerFit does not provide legal advice, tax advice, accounting advice, investment advice, brokerage services, or regulated professional services requiring licensure.</p>
+            <p>You are responsible for obtaining advice from appropriately licensed professionals before making legal, tax, financial, investment, compliance, or other major business decisions.</p>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§5</span> Eligibility and Authority</h2>
+            <p>By using the services, you represent that:</p>
+            <ul>
+                <li>you are at least 18 years old;</li>
+                <li>you have legal capacity to enter into a binding agreement; and</li>
+                <li>if you are acting for a company or other entity, you have authority to bind that entity.</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§6</span> Permitted Use and Restrictions</h2>
+            <p>You agree to use the services only for lawful purposes and for your own internal business planning and evaluation.</p>
+            <p>You may not:</p>
+            <ul>
+                <li>reproduce, republish, sell, sublicense, or redistribute eSellerFit content, frameworks, tools, or deliverables except as expressly permitted;</li>
+                <li>copy, scrape, crawl, harvest, reverse engineer, or otherwise extract data or functionality from the website or tools;</li>
+                <li>use bots, scripts, or automated means to access or interfere with the services;</li>
+                <li>use the services to build a competing product or service;</li>
+                <li>introduce malware, attempt unauthorized access, or interfere with site functionality;</li>
+                <li>impersonate another person or provide false information.</li>
+            </ul>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§7</span> Payment Terms</h2>
+            <p>Paid services must be paid in advance unless eSellerFit agrees otherwise in writing.</p>
+            <p>Payments are processed through third-party payment processors such as Stripe. By submitting payment information, you authorize the applicable charge.</p>
+            <p>Unless expressly stated otherwise:</p>
+            <ul>
+                <li>prices are listed in U.S. dollars;</li>
+                <li>prices do not include taxes that may apply by law; and</li>
+                <li>you are responsible for any applicable taxes, bank fees, currency conversion fees, or similar charges.</li>
+            </ul>
+            <p>Refund eligibility is governed exclusively by the Refund Policy and any higher-priority signed agreement.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§8</span> Relationship of the Parties</h2>
+            <p>The relationship between you and eSellerFit is that of independent contracting parties. Nothing in these Terms or any related agreement creates any partnership, joint venture, agency, employment, franchise, fiduciary, or similar relationship. Neither party has authority to bind the other except as expressly agreed in writing.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§9</span> Client Responsibility</h2>
+            <p>You acknowledge that:</p>
+            <ul>
+                <li>you are solely responsible for your own decisions, actions, implementation, and results;</li>
+                <li>e-commerce and marketplace selling involve substantial business risk;</li>
+                <li>platform rules, fees, algorithms, and market conditions can change at any time;</li>
+                <li>your results depend on many factors outside eSellerFit's control, including execution, timing, capital, product quality, pricing, competition, and demand; and</li>
+                <li>you are responsible for legal compliance, tax compliance, licenses, permits, product claims, customer communications, and marketplace compliance.</li>
+            </ul>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§10</span> Intellectual Property</h2>
+            <p>All rights, title, and interest in and to the eSellerFit website, brand, content, tools, frameworks, templates, methodologies, and pre-existing materials are and remain the exclusive property of eSellerFit or its licensors.</p>
+            <p>Except as expressly permitted in a signed higher-priority agreement, you receive no ownership rights in eSellerFit intellectual property.</p>
+            <p>You retain ownership of the information and materials you submit to eSellerFit. You grant eSellerFit a limited, non-exclusive license to use that information solely to provide the services, operate the business, maintain records, enforce agreements, and improve services in de-identified or aggregated form.</p>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§11</span> Confidentiality</h2>
+            <p>eSellerFit will use reasonable care to protect non-public client information shared for the purpose of receiving services and will not intentionally disclose it to third parties except:</p>
+            <ul>
+                <li>as reasonably necessary to provide the services;</li>
+                <li>to service providers, advisors, or contractors with a need to know and subject to appropriate confidentiality obligations;</li>
+                <li>as required by law, court order, subpoena, or legal process;</li>
+                <li>to protect rights, safety, property, or enforce agreements; or</li>
+                <li>if the information becomes publicly available through no breach by eSellerFit.</li>
+            </ul>
+            <p>You agree not to disclose, share, or use eSellerFit proprietary tools, frameworks, methods, pricing logic, or deliverable structures except as permitted by the applicable agreement.</p>
+        </section>
+
+        <!-- Section 12 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§12</span> Disclaimer of Warranties</h2>
+            <p class="caps-block">THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." TO THE MAXIMUM EXTENT PERMITTED BY LAW, ESELLERFIT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+            <p>eSellerFit does not warrant that:</p>
+            <ul>
+                <li>recommendations will produce any particular result;</li>
+                <li>services will be uninterrupted or error-free;</li>
+                <li>data, research, or third-party information will always be complete, current, or accurate; or</li>
+                <li>any marketplace or third-party platform will act consistently with any recommendation.</li>
+            </ul>
+        </section>
+
+        <!-- Section 13 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§13</span> Limitation of Liability</h2>
+            <p class="caps-block">TO THE MAXIMUM EXTENT PERMITTED BY LAW, ESELLERFIT'S TOTAL LIABILITY ARISING OUT OF OR RELATING TO THE SERVICES OR THESE TERMS WILL NOT EXCEED THE AMOUNT YOU PAID FOR THE SPECIFIC PAID SERVICE GIVING RISE TO THE CLAIM. IF THE CLAIM RELATES ONLY TO A FREE SERVICE, ESELLERFIT'S TOTAL LIABILITY WILL NOT EXCEED $50.</p>
+            <p class="caps-block">TO THE MAXIMUM EXTENT PERMITTED BY LAW, ESELLERFIT WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOST PROFITS, LOST REVENUE, LOST DATA, LOST OPPORTUNITY, BUSINESS INTERRUPTION, OR DIMINUTION IN VALUE, EVEN IF ADVISED OF THE POSSIBILITY.</p>
+            <p>Nothing in this agreement excludes liability that cannot be excluded under applicable law.</p>
+        </section>
+
+        <!-- Section 14 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§14</span> Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless eSellerFit LLC, its owner, affiliates, contractors, and representatives from and against third-party claims, losses, liabilities, damages, judgments, and reasonable attorneys' fees arising out of or related to:</p>
+            <ul>
+                <li>your breach of these Terms or any related agreement;</li>
+                <li>your misuse of the services;</li>
+                <li>your products, services, content, marketing, customer disputes, or business operations; or</li>
+                <li>your violation of law or third-party rights.</li>
+            </ul>
+        </section>
+
+        <!-- Section 15 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§15</span> Third-Party Services</h2>
+            <p>The services may rely on or reference third-party services such as Stripe, Zoom, scheduling tools, analytics providers, and marketplace platforms. Those third parties operate under their own terms and policies. eSellerFit is not responsible for third-party acts, omissions, outages, policies, or data practices.</p>
+        </section>
+
+        <!-- Section 16 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§16</span> Electronic Communications and Signatures</h2>
+            <p>You consent to receive communications from eSellerFit electronically, including by email and through the website. You agree that electronic records, notices, disclosures, and signatures satisfy any legal requirement for writing.</p>
+        </section>
+
+        <!-- Section 17 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§17</span> Session Recordings</h2>
+            <p>eSellerFit may record a consultation session only with your verbal or written consent. If you do not consent, the session will not be recorded. Recordings, if any, are confidential business records of eSellerFit unless otherwise agreed in writing.</p>
+        </section>
+
+        <!-- Section 18 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§18</span> Termination</h2>
+            <p>eSellerFit may suspend or terminate access to the services, cancel a booking, or refuse future service if you:</p>
+            <ul>
+                <li>breach these Terms or any related policy or agreement;</li>
+                <li>provide false or misleading information;</li>
+                <li>misuse the website, tools, or deliverables;</li>
+                <li>engage in abusive, threatening, or unlawful conduct; or</li>
+                <li>materially interfere with service delivery.</li>
+            </ul>
+            <p>If eSellerFit terminates for your cause, refund rights, if any, are governed by the Refund Policy and any signed agreement.</p>
+        </section>
+
+        <!-- Section 19 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§19</span> Force Majeure</h2>
+            <p>Neither party will be liable for delay or failure to perform caused by events beyond reasonable control, including illness, internet or platform outages, cyber incidents, acts of government, labor disruptions, natural disasters, severe weather, war, terrorism, or similar events. The affected party will use reasonable efforts to resume performance. For paid services, remedies for scheduling disruption are governed by the Refund Policy and Client Agreement.</p>
+        </section>
+
+        <!-- Section 20 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§20</span> Dispute Resolution; Governing Law; Venue</h2>
+            <p>These Terms are governed by the laws of the State of New York, without regard to conflict of laws rules.</p>
+            <p>Before filing a lawsuit, the parties will first attempt in good faith to resolve the dispute through written notice and informal discussion for at least 30 days.</p>
+            <p>Either party may request non-binding mediation in Westchester County, New York. If mediation is not pursued or does not resolve the dispute, any legal action must be brought exclusively in the state courts located in Westchester County, New York, or in the United States District Court for the Southern District of New York, and each party consents to that venue and jurisdiction.</p>
+            <p>Nothing in this section prevents either party from seeking temporary injunctive or equitable relief in a court of competent jurisdiction.</p>
+        </section>
+
+        <!-- Section 21 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§21</span> No Waiver; Severability; Assignment</h2>
+            <p>No waiver is effective unless in writing. A failure to enforce any provision is not a waiver.</p>
+            <p>If any provision is held unenforceable, the remaining provisions will remain in effect and the unenforceable provision will be enforced to the maximum extent permitted.</p>
+            <p>You may not assign your rights or obligations without eSellerFit's prior written consent. eSellerFit may assign this agreement in connection with a merger, sale of assets, reorganization, or similar transaction.</p>
+        </section>
+
+        <!-- Section 22 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§22</span> Entire Agreement</h2>
+            <p>These Terms, together with the applicable Client Agreement, Refund Policy, Disclaimer, Privacy Policy, and any service-specific writing incorporated by reference, constitute the entire agreement between you and eSellerFit concerning the subject matter covered.</p>
+        </section>
+
+        <!-- Section 23 -->
+        <section class="legal-section">
+            <h2><span class="section-num">§23</span> Contact</h2>
+            <p>eSellerFit LLC<br>
+            Email: <a href="mailto:contact@esellerfit.com" style="color: var(--teal-light); text-decoration: none;">contact@esellerfit.com</a></p>
+        </section>
+
+    </main>
+
+    <footer class="legal-footer">
+        <span class="version-badge">v2.1</span>
+        <p>eSellerFit LLC Terms of Service<br>
+        Effective March 23, 2026 &middot; Last Updated: April 2, 2026<br>
+        Westchester County, New York</p>
+    </footer>
 
 </body>
 </html>
