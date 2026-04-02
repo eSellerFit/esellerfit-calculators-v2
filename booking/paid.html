@@ -73,19 +73,27 @@
         <div class="consent-section">
           <div class="consent-title">Before you proceed</div>
 
-          <div class="consent-item consent-item-full">
-            <label for="legalConsent">
-              <input type="checkbox" id="legalConsent" name="legalConsent" required>
-              I have read and agree to the
-              <a href="../legal/terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>,
-              <a href="../legal/client-agreement.html" target="_blank" rel="noopener noreferrer">Client Agreement</a>,
-              <a href="../legal/refund-policy.html" target="_blank" rel="noopener noreferrer">Refund Policy</a>,
-              <a href="../legal/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>,
-              and
-              <a href="../legal/disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>,
-              which together govern this purchase and the services provided.
-            </label>
-          </div>
+          <label for="legalConsent" class="consent-card">
+            <input type="checkbox" id="legalConsent" name="legalConsent" required>
+
+            <div class="consent-copy">
+              <div class="consent-main">
+                I have read and agree to the documents governing this purchase.
+              </div>
+
+              <div class="consent-links">
+                <a href="../legal/terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                <span>·</span>
+                <a href="../legal/client-agreement.html" target="_blank" rel="noopener noreferrer">Client Agreement</a>
+                <span>·</span>
+                <a href="../legal/refund-policy.html" target="_blank" rel="noopener noreferrer">Refund Policy</a>
+                <span>·</span>
+                <a href="../legal/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <span>·</span>
+                <a href="../legal/disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>
+              </div>
+            </div>
+          </label>
 
           <p class="consent-note">
             This is a paid advisory service with custom analysis and reserved time.
