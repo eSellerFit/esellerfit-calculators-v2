@@ -1,4 +1,5 @@
-const FREE_CALL_REDIRECT_URL = 'https://calendar.google.com/';
+const MAKE_WEBHOOK_URL = 'PASTE_YOUR_MAKE_WEBHOOK_HERE';
+const FREE_CALL_REDIRECT_URL = 'https://calendar.app.google/hCJnNXJLTim3HeTj6';
 
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -22,20 +23,28 @@ function validateForm() {
 
   let isValid = true;
 
-  if (!fullName) {
-    isValid = false;
-  }
-
-  if (!email || !validateEmail(email)) {
-    isValid = false;
-  }
-
-  if (!termsConsent || !privacyConsent || !disclaimerConsent || !noSalesPitch) {
-    isValid = false;
-  }
+  if (!fullName) isValid = false;
+  if (!email || !validateEmail(email)) isValid = false;
+  if (!termsConsent || !privacyConsent || !disclaimerConsent || !noSalesPitch) isValid = false;
 
   submitBtn.disabled = !isValid;
   return isValid;
+}
+
+async function sendToMake(payload) {
+  if (!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL.includes('PASTE_YOUR_MAKE_WEBHOOK_HERE')) {
+    return;
+  }
+
+  try {
+    await fetch(MAKE_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch (error) {
+    console.error('Error sending to Make:', error);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -90,6 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Redirecting...';
+
+    const payload = {
+      source: 'free-call-booking',
+      flow: 'free-call-page -> google-calendar',
+      full_name: fullNameValue,
+      email: emailValue,
+      accepted_at: new Date().toISOString(),
+      source_page: window.location.href,
+      consents: {
+        termsOfService: true,
+        privacyPolicy: true,
+        disclaimer: true,
+        noSalesPitch: true
+      },
+      next_step: 'google-calendar',
+      redirect_url: FREE_CALL_REDIRECT_URL
+    };
+
+    await sendToMake(payload);
 
     window.location.href = FREE_CALL_REDIRECT_URL;
   });
