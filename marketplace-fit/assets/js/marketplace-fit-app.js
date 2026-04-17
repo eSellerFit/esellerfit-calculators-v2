@@ -4,6 +4,20 @@
     answers: {}
   };
 
+  const analyticsState = {
+    emailFocusTracked: false,
+    consentTracked: false
+  };
+
+  function trackEvent(eventName, params = {}) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, {
+        tool_name: 'marketplace_fit',
+        ...params
+      });
+    }
+  }
+
   function answeredCount() {
     return Object.keys(state.answers).length;
   }
@@ -155,6 +169,12 @@
         window.ESF_SHELL.show('resultsScreen');
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
+        trackEvent('marketplace_fit_completed', {
+          top_platform: topPlatform || '',
+          second_platform: secondPlatform || '',
+          platform_gap: platformGap
+        });
+
         if (btn) {
           btn.disabled = false;
           btn.textContent = 'See My Fit →';
@@ -174,6 +194,10 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    trackEvent('marketplace_fit_view', {
+      page_type: 'calculator_landing'
+    });
+
     window.ESF_SHELL.bindStartGate({
       emailId: 'emailInput',
       categoryId: null,
@@ -193,13 +217,29 @@
       if (startBtn) startBtn.disabled = !ok;
     };
 
+    emailEl?.addEventListener('focus', () => {
+      if (analyticsState.emailFocusTracked) return;
+      analyticsState.emailFocusTracked = true;
+
+      trackEvent('marketplace_fit_email_focus');
+    });
+
+    consentEl?.addEventListener('change', () => {
+      if (consentEl.checked && !analyticsState.consentTracked) {
+        analyticsState.consentTracked = true;
+        trackEvent('marketplace_fit_consent_checked');
+      }
+    });
+
     emailEl?.addEventListener('input', validate);
     consentEl?.addEventListener('change', validate);
+
     emailEl?.addEventListener('keydown', e => {
       if (e.key === 'Enter' && startBtn && !startBtn.disabled) {
         startBtn.click();
       }
     });
+
     validate();
 
     window.ESF_SHELL.bindBookingConsent({
@@ -210,6 +250,7 @@
     document.getElementById('startBtn')?.addEventListener('click', () => {
       state.clientEmail = document.getElementById('emailInput')?.value.trim() || '';
       state.answers = {};
+
       window.MARKETPLACE_FIT_RENDER.buildQuestions('aBody', state.answers, pickAnswer);
       window.ESF_SHELL.setProgress(
         0,
@@ -220,6 +261,8 @@
       document.getElementById('cBar')?.classList.remove('show');
       window.ESF_SHELL.show('assessScreen');
       window.scrollTo({ top: 0, behavior: 'instant' });
+
+      trackEvent('marketplace_fit_started');
     });
 
     document.getElementById('cBtn')?.addEventListener('click', submitAssessment);
