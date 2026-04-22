@@ -144,10 +144,10 @@
 
       <div class="cta-section">
         <div class="cta-eyebrow">Next Step</div>
-        <div class="cta-title">Your fit is only step one</div>
+        <div class="cta-title">Don’t stop at seller fit</div>
 
         <div style="font-size:14px;color:var(--t3);line-height:1.75;margin-bottom:24px;">
-          This result shows where you are more likely to fit. The next step is deciding what to sell, where to enter, and how to reduce early risk.
+          Your seller profile shows how you tend to operate. The next step is checking market reality and platform fit before making a real entry decision.
         </div>
 
         <label class="cta-consent" id="bookingConsentLabel" style="margin-bottom:32px;">
@@ -157,27 +157,53 @@
           </span>
         </label>
 
-        <div style="border:1.5px solid rgba(202,162,95,0.35);border-radius:10px;padding:28px;background:rgba(202,162,95,0.03);margin-bottom:20px;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Recommended Next Step · $449</div>
-          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Entry Strategy Dossier</div>
+        <div style="border:1.5px solid rgba(15,110,86,0.28);border-radius:10px;padding:28px;background:rgba(15,110,86,0.04);margin-bottom:20px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Recommended Free Next Step</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Run the Other Free Tools</div>
+
+          <div style="font-size:14px;color:var(--t3);line-height:1.72;margin-bottom:16px;">
+            Seller fit is only one part of the decision. Complete the other two tools to see:
+          </div>
+
           <ul class="cta-list" style="margin-bottom:16px;">
-            <li>Your seller profile interpreted alongside verified market data</li>
-            <li>Platform recommendation based on your profile and your specific category</li>
-            <li>A complete entry plan — what to sell, where to enter, and what risks to manage</li>
-            <li>Written dossier + 60-minute walkthrough session</li>
+            <li><strong>Market Pressure</strong> — see how difficult and crowded your target market may be</li>
+            <li><strong>Marketplace Fit</strong> — compare which platform structure fits you best</li>
           </ul>
-          <div class="cta-price"><strong>Written dossier + 60-minute session · $449</strong></div>
-          <button type="button" id="ctaBtn" class="cta-btn" disabled onclick="window.location.href='../booking/paid.html'">Get My Entry Strategy · $449 →</button>
+
+          <div class="cta-price"><strong>2 free tools · a few minutes each</strong></div>
+
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <button type="button" id="ctaBtn" class="cta-btn" disabled onclick="window.location.href='../market-pressure/'">
+              Run Market Pressure →
+            </button>
+            <button type="button" id="ctaBtnMp" class="cta-btn" disabled onclick="window.location.href='../marketplace-fit/'" style="background:#1e1e28;">
+              Run Marketplace Fit →
+            </button>
+          </div>
         </div>
 
-        <div style="border:1px solid var(--border);border-radius:10px;padding:24px;background:rgba(255,255,255,0.5);">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Not Ready Yet · Free</div>
-          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Free Call with George</div>
+        <div style="border:1px solid var(--border);border-radius:10px;padding:24px;background:rgba(255,255,255,0.5);margin-bottom:20px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Still Not Sure · Free</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Talk to George First</div>
           <div style="font-size:14px;color:var(--t3);line-height:1.72;margin-bottom:16px;">
-            Best if you want help deciding whether the full Entry Strategy is right for you.
+            Best if you want help interpreting this result before deciding whether to continue with the tools or go deeper.
           </div>
           <div class="cta-price"><strong>30-minute call · Free</strong></div>
-          <button type="button" id="ctaBtn2" class="cta-btn" disabled onclick="window.location.href='../booking/free-call.html'">Book Free Call with George →</button>
+          <button type="button" id="ctaBtn2" class="cta-btn" disabled onclick="window.location.href='../booking/free-call.html'">
+            Book Free Call with George →
+          </button>
+        </div>
+
+        <div style="border:1px solid rgba(202,162,95,0.28);border-radius:10px;padding:24px;background:rgba(202,162,95,0.03);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Ready to Go Deeper · $449</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Get the Full Entry Strategy</div>
+          <div style="font-size:14px;color:var(--t3);line-height:1.72;margin-bottom:16px;">
+            Best if you already want a real decision on what to sell, where to enter, and what risks to manage.
+          </div>
+          <div class="cta-price"><strong>Written dossier + 60-minute session · $449</strong></div>
+          <button type="button" id="ctaBtn3" class="cta-btn" disabled onclick="window.location.href='../booking/paid.html'">
+            Get My Entry Strategy · $449 →
+          </button>
         </div>
 
         <div class="cta-agreement" style="margin-top:16px;">
