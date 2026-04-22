@@ -48,6 +48,22 @@
     };
   }
 
+  function syncBookingButtons() {
+    const consentChecked = !!document.getElementById('bookingConsent')?.checked;
+
+    const buttonIds = ['ctaBtn', 'ctaBtnMp', 'ctaBtn2', 'ctaBtn3'];
+
+    buttonIds.forEach(id => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+
+      btn.disabled = !consentChecked;
+      btn.style.opacity = consentChecked ? '1' : '0.35';
+      btn.style.pointerEvents = consentChecked ? 'auto' : 'none';
+      btn.style.cursor = consentChecked ? 'pointer' : 'not-allowed';
+    });
+  }
+
   async function submitAssessment() {
     if (countAnswered() < window.SELLER_PROFILE_DATA.totalQuestions) {
       alert('Please answer all 19 questions before submitting');
@@ -160,6 +176,15 @@
         window.ESF_SHELL.show('resultsScreen');
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
+        // Important: re-sync buttons after results are shown
+        syncBookingButtons();
+
+        const bookingConsent = document.getElementById('bookingConsent');
+        if (bookingConsent) {
+          bookingConsent.removeEventListener('change', syncBookingButtons);
+          bookingConsent.addEventListener('change', syncBookingButtons);
+        }
+
         if (btn) {
           btn.disabled = false;
           btn.textContent = 'Generate My Profile →';
@@ -201,10 +226,17 @@
 
     validate();
 
+    // Keep shell binding if it helps existing logic,
+    // but do not rely on it as the only source of truth.
     window.ESF_SHELL.bindBookingConsent({
       consentId: 'bookingConsent',
       buttonIds: ['ctaBtn', 'ctaBtnMp', 'ctaBtn2', 'ctaBtn3']
     });
+
+    // Force our own sync logic
+    syncBookingButtons();
+
+    document.getElementById('bookingConsent')?.addEventListener('change', syncBookingButtons);
 
     document.getElementById('startBtn')?.addEventListener('click', () => {
       state.clientEmail = document.getElementById('emailInput')?.value.trim() || '';
@@ -226,18 +258,22 @@
     document.getElementById('cBtn')?.addEventListener('click', submitAssessment);
 
     document.getElementById('ctaBtn')?.addEventListener('click', () => {
+      if (document.getElementById('ctaBtn')?.disabled) return;
       window.location.href = '../market-pressure/';
     });
 
     document.getElementById('ctaBtnMp')?.addEventListener('click', () => {
+      if (document.getElementById('ctaBtnMp')?.disabled) return;
       window.location.href = '../marketplace-fit/';
     });
 
     document.getElementById('ctaBtn2')?.addEventListener('click', () => {
+      if (document.getElementById('ctaBtn2')?.disabled) return;
       window.location.href = window.ESF_CONFIG.freeCallUrl;
     });
 
     document.getElementById('ctaBtn3')?.addEventListener('click', () => {
+      if (document.getElementById('ctaBtn3')?.disabled) return;
       window.location.href = window.ESF_CONFIG.paidBookingUrl;
     });
   });
