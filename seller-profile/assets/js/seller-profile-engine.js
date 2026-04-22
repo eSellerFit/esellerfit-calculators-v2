@@ -42,12 +42,12 @@ window.SELLER_PROFILE_ENGINE = {
     }
 
     if (ct === 'low') {
-      if (M >= E) return {
-        state:'go',
-        intro:'Your profile suggests an audience-first directional path may align with your current structure.',
-        step1:{platform:'Niche / D2C',icon:'🎯',color:'#9b8ec4',why:'Your differentiation strength may be a viable entry asset. Building an owned audience channel could be a logical starting point.'},
-        step2:{platform:'Shopify',icon:'🛍',color:'#4a8a5a',when:'Consider when monthly revenue demonstrates consistent traction with a proven content approach'}
-      };
+  if (M >= E) return {
+    state:'go',
+    intro:'Your profile suggests a Shopify-first path may align with your current structure.',
+    step1:{platform:'Shopify',icon:'🛍',color:'#4a8a5a',why:'Your differentiation strength may be a viable entry asset. Building an owned audience channel could be a logical starting point.'},
+    step2:{platform:'Etsy',icon:'🧵',color:'#e8635a',when:'Consider alongside or after initial traction if you want a lower-complexity channel to validate product direction'}
+  };
       return {
         state:'go',
         intro:'Your profile suggests a low-barrier, execution-first directional path may align with your current structure.',
