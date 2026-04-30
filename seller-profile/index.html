@@ -7,71 +7,96 @@
   <link rel="stylesheet" href="/seller-profile/assets/css/shared-ui.css">
 
   <style>
-    /* Temporary mobile-first conversion test for Seller Profile */
+  /* Temporary conversion test for Seller Profile */
+
+  #welcomeScreen .w-inner {
+    width: min(92vw, 1080px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  #welcomeScreen .w-left {
+    width: 100%;
+    max-width: 860px;
+  }
+
+  #welcomeScreen .w-title {
+    font-size: clamp(44px, 5vw, 72px) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -0.035em;
+    max-width: 860px;
+  }
+
+  #welcomeScreen .w-sub {
+    max-width: 760px;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  #welcomeScreen .w-confidence {
+    max-width: 760px;
+  }
+
+  #welcomeScreen .w-btn {
+    width: min(100%, 760px);
+    min-height: 64px;
+  }
+
+  #welcomeScreen .w-microcopy,
+  #welcomeScreen .w-intro-nudge {
+    max-width: 760px;
+  }
+
+  @media (max-width: 520px) {
     #welcomeScreen .w-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      padding-left: 28px;
-      padding-right: 28px;
+      width: 100%;
+      padding-left: 18px;
+      padding-right: 18px;
     }
 
     #welcomeScreen .w-left {
       max-width: 100%;
-      width: 100%;
     }
 
     #welcomeScreen .w-title {
-      font-size: clamp(42px, 5.2vw, 64px) !important;
-      line-height: 1.04 !important;
+      font-size: 38px !important;
+      line-height: 1.08 !important;
       letter-spacing: -0.035em;
-      max-width: 680px;
+      max-width: 100%;
     }
 
     #welcomeScreen .w-sub {
-      max-width: 660px;
-      font-size: 18px;
-      line-height: 1.65;
+      font-size: 17px;
+      line-height: 1.55;
+      max-width: 100%;
+    }
+
+    #welcomeScreen .w-confidence {
+      margin-top: 18px !important;
+      max-width: 100%;
     }
 
     #welcomeScreen .w-btn {
       width: 100%;
-      min-height: 64px;
+      margin-top: 18px !important;
+      font-size: 17px;
+      line-height: 1.25;
+      padding-left: 18px;
+      padding-right: 18px;
     }
 
-    @media (max-width: 520px) {
-      #welcomeScreen .w-inner {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      #welcomeScreen .w-title {
-        font-size: 38px !important;
-        line-height: 1.08 !important;
-        letter-spacing: -0.035em;
-      }
-
-      #welcomeScreen .w-sub {
-        font-size: 17px;
-        line-height: 1.55;
-      }
-
-      #welcomeScreen .w-confidence {
-        margin-top: 18px !important;
-      }
-
-      #welcomeScreen .w-btn {
-        margin-top: 18px !important;
-        font-size: 17px;
-        line-height: 1.25;
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      #welcomeScreen .w-intro-nudge {
-        opacity: 0.72;
-      }
+    #welcomeScreen .w-microcopy,
+    #welcomeScreen .w-intro-nudge {
+      max-width: 100%;
     }
-  </style>
+
+    #welcomeScreen .w-intro-nudge {
+      opacity: 0.72;
+    }
+  }
+</style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E14KQ15D6"></script>
   <script>
