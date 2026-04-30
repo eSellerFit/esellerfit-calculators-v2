@@ -5,6 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>eSellerFit — Seller Profile Assessment</title>
   <link rel="stylesheet" href="/seller-profile/assets/css/shared-ui.css">
+
+  <style>
+    /* Temporary mobile-first conversion test for Seller Profile */
+    #welcomeScreen .w-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    #welcomeScreen .w-left {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #welcomeScreen .w-title {
+      font-size: clamp(42px, 5.2vw, 64px) !important;
+      line-height: 1.04 !important;
+      letter-spacing: -0.035em;
+      max-width: 680px;
+    }
+
+    #welcomeScreen .w-sub {
+      max-width: 660px;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    #welcomeScreen .w-btn {
+      width: 100%;
+      min-height: 64px;
+    }
+
+    @media (max-width: 520px) {
+      #welcomeScreen .w-inner {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      #welcomeScreen .w-title {
+        font-size: 38px !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.035em;
+      }
+
+      #welcomeScreen .w-sub {
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      #welcomeScreen .w-confidence {
+        margin-top: 18px !important;
+      }
+
+      #welcomeScreen .w-btn {
+        margin-top: 18px !important;
+        font-size: 17px;
+        line-height: 1.25;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      #welcomeScreen .w-intro-nudge {
+        opacity: 0.72;
+      }
+    }
+  </style>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E14KQ15D6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,6 +81,7 @@
     gtag('config', 'G-3E14KQ15D6');
   </script>
 </head>
+
 <body>
   <div class="overlay" id="overlay">
     <div class="spinner"></div>
@@ -25,13 +94,15 @@
         <div class="w-logo">eSF</div>
         <div class="w-brand-name">eSellerFit</div>
       </a>
+
       <div class="w-left" style="margin-top:8px;">
         <div class="w-eyebrow">Amazon FBA · Free Check</div>
 
-        <div class="w-title" style="font-size:clamp(34px, 9vw, 56px);line-height:1.08;">
-  Thinking About Amazon FBA?<br>
-  Check If It Actually Fits You First
-</div>
+        <div class="w-title">
+          Thinking About Amazon FBA?<br>
+          Check If It Actually Fits You First
+        </div>
+
         <div class="w-sub">
           Amazon can work — but it is not the right starting point for everyone.
           Take a free 5-minute Seller Profile test before you spend money on inventory, ads, courses, or tools.
@@ -55,9 +126,11 @@
         </div>
 
         <div class="w-intro-nudge" style="margin-top:18px;opacity:0.78;">
-  <span>Prefer to talk first?</span>
-  <a href="../booking/free-call.html">Book free 30-min call →</a>
-</div>
+          <span>Prefer to talk first?</span>
+          <a href="../booking/free-call.html">Book free 30-min call →</a>
+        </div>
+      </div>
+
       <div class="w-footer">
         <a href="../legal/terms.html">Terms of Service</a>
         <a href="../legal/privacy.html">Privacy Policy</a>
@@ -67,6 +140,7 @@
       </div>
     </div>
   </div>
+
   <div class="screen" id="assessScreen">
     <div class="a-hdr">
       <a class="a-logo" href="../" style="text-decoration:none;">
@@ -76,12 +150,17 @@
           <div class="a-sub" id="aSubtitle">Seller Profile Diagnostic</div>
         </div>
       </a>
+
       <div class="a-prog">
         <div class="a-prog-txt" id="progTxt">0 / 19</div>
-        <div class="a-prog-bg"><div class="a-prog-fill" id="progFill"></div></div>
+        <div class="a-prog-bg">
+          <div class="a-prog-fill" id="progFill"></div>
+        </div>
       </div>
     </div>
+
     <div class="a-body" id="aBody"></div>
+
     <div class="c-bar" id="cBar">
       <div class="c-msg"><strong>All responses recorded.</strong> Ready to generate your profile.</div>
       <button class="c-btn" id="cBtn">Generate My Profile →</button>
@@ -105,8 +184,12 @@
 
       <div class="r-hdr">
         <div class="r-title">Your Seller Profile Is Ready</div>
-        <div class="r-intro">Based on your answers, here's how your current situation fits different ways of selling online — and where to start.</div>
-        <div class="r-intro-2">This is a starting point, not a final answer. A live session helps translate this into a specific plan for your situation.</div>
+        <div class="r-intro">
+          Based on your answers, here's how your current situation fits different ways of selling online — and where to start.
+        </div>
+        <div class="r-intro-2">
+          This is a starting point, not a final answer. A live session helps translate this into a specific plan for your situation.
+        </div>
       </div>
 
       <div class="r-radar-card">
@@ -114,6 +197,7 @@
         <div class="r-radar-title">Where You're Strong — and Where to Focus</div>
         <canvas id="radarCanvas" width="540" height="400"></canvas>
         <div class="r-radar-sub">The further each point extends, the stronger that area of your profile.</div>
+
         <div class="r-legend">
           <div class="r-leg"><div class="r-leg-dot" style="background:#caa25f"></div>Budget</div>
           <div class="r-leg"><div class="r-leg-dot" style="background:#4ecdc4"></div>Risk Tolerance</div>
@@ -123,6 +207,7 @@
       </div>
 
       <div id="directionSlot"></div>
+
       <div class="interp-section">
         <div class="r-section-eyebrow">Why This Matters</div>
         <div class="r-section-title">Most sellers pick the wrong platform first</div>
@@ -132,6 +217,7 @@
           This profile is step one. A live session helps you connect it to an actual plan.
         </div>
       </div>
+
       <div class="cta-section">
         <div class="cta-eyebrow">Next Step</div>
         <div class="cta-title">Don’t stop at seller fit</div>
@@ -148,8 +234,12 @@
         </label>
 
         <div style="border:1.5px solid rgba(15,110,86,0.28);border-radius:10px;padding:28px;background:rgba(15,110,86,0.04);margin-bottom:20px;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Recommended Free Next Step</div>
-          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Run the Other Free Tools</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">
+            Recommended Free Next Step
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">
+            Run the Other Free Tools
+          </div>
 
           <div style="font-size:14px;color:var(--t3);line-height:1.72;margin-bottom:16px;">
             Seller fit is only one part of the decision. Complete the other two tools to see:
@@ -173,8 +263,12 @@
         </div>
 
         <div style="border:1px solid var(--border);border-radius:10px;padding:24px;background:rgba(255,255,255,0.5);margin-bottom:20px;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Still Not Sure · Free</div>
-          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Talk to George First</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">
+            Still Not Sure · Free
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">
+            Talk to George First
+          </div>
           <div style="font-size:14px;color:var(--t3);line-height:1.72;margin-bottom:16px;">
             Best if you want help interpreting this result before deciding whether to continue with the tools or go deeper.
           </div>
@@ -185,8 +279,12 @@
         </div>
 
         <div style="border:1px solid rgba(202,162,95,0.28);border-radius:10px;padding:24px;background:rgba(202,162,95,0.03);">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">Ready to Go Deeper · $449</div>
-          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">Get the Full Entry Strategy</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:#2a7a7a;margin-bottom:12px;">
+            Ready to Go Deeper · $449
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-bottom:10px;">
+            Get the Full Entry Strategy
+          </div>
           <div style="font-size:14px;color:var(--t3);line-height:1.72;margin-bottom:16px;">
             Best if you already want a real decision on what to sell, where to enter, and what risks to manage.
           </div>
